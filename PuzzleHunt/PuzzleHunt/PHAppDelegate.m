@@ -17,6 +17,14 @@ NSString * const PHUserPhoneKey = @"PHUserPhoneKey";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Set the initial values for the user's info
+    NSDictionary *defaults = @{PHIsLoggedInKey: [NSNumber numberWithBool:NO],
+                               PHUserNameKey: @"",
+                               PHUserPhoneKey: @""};
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+    
+    
     // Override point for customization after application launch.
     return YES;
 }
