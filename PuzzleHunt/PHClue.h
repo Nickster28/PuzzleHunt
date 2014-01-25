@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PHClue : NSObject
+@interface PHClue : NSObject <NSCoding>
 
 @property (nonatomic,strong) NSString *clueName;
 @property (nonatomic,strong) NSString *clueDescription;
-@property (nonatomic,strong) UIImage *clueImage;
+//@property (nonatomic,strong) UIImage *clueImage;
 @property (nonatomic) NSUInteger latitude;
 @property (nonatomic) NSUInteger longitude;
 @property (nonatomic) NSUInteger time;              //Units in minutes
@@ -20,7 +20,7 @@
 
 - (id)initWithName:(NSString *)name
        Description:(NSString *)description
-             Image:(UIImage *)image
+             //Image:(UIImage *)image
           Latitude:(NSUInteger)latitude
          Longitude:(NSUInteger)longitude
               Time:(NSUInteger)time
