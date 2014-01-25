@@ -69,8 +69,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				016F4A741893C3C4005D0B3E /* SystemConfiguration.framework in Frameworks */,
+				016F4A721893C3BE005D0B3E /* StoreKit.framework in Frameworks */,
+				016F4A701893C3B9005D0B3E /* Security.framework in Frameworks */,
+				016F4A6E1893C3B4005D0B3E /* QuartzCore.framework in Frameworks */,
+				016F4A6C1893C3AF005D0B3E /* MobileCoreServices.framework in Frameworks */,
+				016F4A6A1893C3AB005D0B3E /* libz.dylib in Frameworks */,
+				016F4A681893C3A5005D0B3E /* CoreLocation.framework in Frameworks */,
 				016F4A291893A8C3005D0B3E /* CoreGraphics.framework in Frameworks */,
+				016F4A661893C398005D0B3E /* CFNetwork.framework in Frameworks */,
+				016F4A641893C392005D0B3E /* AudioToolbox.framework in Frameworks */,
 				016F4A2B1893A8C3005D0B3E /* UIKit.framework in Frameworks */,
+				016F4A621893C323005D0B3E /* Parse.framework in Frameworks */,
 				016F4A271893A8C3005D0B3E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,6 +124,16 @@
 		016F4A251893A8C3005D0B3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				016F4A611893C323005D0B3E /* Parse.framework */,
+				016F4A731893C3C4005D0B3E /* SystemConfiguration.framework */,
+				016F4A711893C3BE005D0B3E /* StoreKit.framework */,
+				016F4A6F1893C3B9005D0B3E /* Security.framework */,
+				016F4A6D1893C3B4005D0B3E /* QuartzCore.framework */,
+				016F4A6B1893C3AF005D0B3E /* MobileCoreServices.framework */,
+				016F4A691893C3AB005D0B3E /* libz.dylib */,
+				016F4A671893C3A5005D0B3E /* CoreLocation.framework */,
+				016F4A651893C398005D0B3E /* CFNetwork.framework */,
+				016F4A631893C392005D0B3E /* AudioToolbox.framework */,
 				016F4A261893A8C3005D0B3E /* Foundation.framework */,
 				016F4A281893A8C3005D0B3E /* CoreGraphics.framework */,
 				016F4A2A1893A8C3005D0B3E /* UIKit.framework */,
@@ -401,6 +421,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Nick/Desktop/PuzzleHunt/PuzzleHunt,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PuzzleHunt/PuzzleHunt-Prefix.pch";
 				INFOPLIST_FILE = "PuzzleHunt/PuzzleHunt-Info.plist";
@@ -415,6 +439,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Nick/Desktop/PuzzleHunt/PuzzleHunt,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PuzzleHunt/PuzzleHunt-Prefix.pch";
 				INFOPLIST_FILE = "PuzzleHunt/PuzzleHunt-Info.plist";
