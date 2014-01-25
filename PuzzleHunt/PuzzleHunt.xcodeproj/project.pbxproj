@@ -14,7 +14,6 @@
 		016F4A331893A8C3005D0B3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 016F4A321893A8C3005D0B3E /* main.m */; };
 		016F4A371893A8C3005D0B3E /* PHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 016F4A361893A8C3005D0B3E /* PHAppDelegate.m */; };
 		016F4A3A1893A8C3005D0B3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 016F4A381893A8C3005D0B3E /* Main.storyboard */; };
-		016F4A3D1893A8C3005D0B3E /* PHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016F4A3C1893A8C3005D0B3E /* PHViewController.m */; };
 		016F4A3F1893A8C3005D0B3E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 016F4A3E1893A8C3005D0B3E /* Images.xcassets */; };
 		016F4A461893A8C4005D0B3E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016F4A451893A8C4005D0B3E /* XCTest.framework */; };
 		016F4A471893A8C4005D0B3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016F4A261893A8C3005D0B3E /* Foundation.framework */; };
@@ -45,8 +44,6 @@
 		016F4A351893A8C3005D0B3E /* PHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHAppDelegate.h; sourceTree = "<group>"; };
 		016F4A361893A8C3005D0B3E /* PHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PHAppDelegate.m; sourceTree = "<group>"; };
 		016F4A391893A8C3005D0B3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		016F4A3B1893A8C3005D0B3E /* PHViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHViewController.h; sourceTree = "<group>"; };
-		016F4A3C1893A8C3005D0B3E /* PHViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PHViewController.m; sourceTree = "<group>"; };
 		016F4A3E1893A8C3005D0B3E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		016F4A441893A8C4005D0B3E /* PuzzleHuntTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PuzzleHuntTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		016F4A451893A8C4005D0B3E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -115,8 +112,6 @@
 				016F4A351893A8C3005D0B3E /* PHAppDelegate.h */,
 				016F4A361893A8C3005D0B3E /* PHAppDelegate.m */,
 				016F4A381893A8C3005D0B3E /* Main.storyboard */,
-				016F4A3B1893A8C3005D0B3E /* PHViewController.h */,
-				016F4A3C1893A8C3005D0B3E /* PHViewController.m */,
 				016F4A3E1893A8C3005D0B3E /* Images.xcassets */,
 				016F4A2D1893A8C3005D0B3E /* Supporting Files */,
 			);
@@ -200,6 +195,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Trancos;
 				TargetAttributes = {
+					016F4A221893A8C3005D0B3E = {
+						DevelopmentTeam = Z8H8DCBR78;
+					};
 					016F4A431893A8C4005D0B3E = {
 						TestTargetID = 016F4A221893A8C3005D0B3E;
 					};
@@ -251,7 +249,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				016F4A371893A8C3005D0B3E /* PHAppDelegate.m in Sources */,
-				016F4A3D1893A8C3005D0B3E /* PHViewController.m in Sources */,
 				016F4A331893A8C3005D0B3E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +376,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PuzzleHunt/PuzzleHunt-Prefix.pch";
 				INFOPLIST_FILE = "PuzzleHunt/PuzzleHunt-Info.plist";
@@ -392,6 +390,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PuzzleHunt/PuzzleHunt-Prefix.pch";
 				INFOPLIST_FILE = "PuzzleHunt/PuzzleHunt-Info.plist";
