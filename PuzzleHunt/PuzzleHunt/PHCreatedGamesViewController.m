@@ -7,6 +7,8 @@
 //
 
 #import "PHCreatedGamesViewController.h"
+#import "PHGame.h"
+#import "PHGameCell.h"
 
 @interface PHCreatedGamesViewController ()
 @property (nonatomic, strong) NSMutableArray *createdGames;
@@ -45,12 +47,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    PHGameCell *cell = [tableView dequeueReusableCellWithIdentifier:@"gameCell"
+                                                          forIndexPath:indexPath];
     
-    // Configure the cell...
+    // Get the game at the current index
+    PHGame *currGame = [self.createdGames objectAtIndex:[indexPath row]];
+    
+    [cell bindGame:currGame];
     
     return cell;
+
 }
 
 

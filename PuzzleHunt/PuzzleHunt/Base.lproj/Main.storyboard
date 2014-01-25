@@ -69,11 +69,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="0.34901960780000002" green="0.76470588240000004" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="VTc-Vm-PxI" customClass="PHGameCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="VTc-Vm-PxI" customClass="PHGameCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VTc-Vm-PxI" id="wI6-0H-GtT">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Avast Ye Mateys" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0z-OA-fLH">
@@ -110,6 +110,7 @@
                                     <outlet property="durationLabel" destination="lAD-4T-oD8" id="XJI-0e-WDx"/>
                                     <outlet property="numCluesLabel" destination="9X5-We-iAw" id="SAh-CY-RYj"/>
                                     <outlet property="titleLabel" destination="Q0z-OA-fLH" id="ohj-Yk-p3v"/>
+                                    <segue destination="EBM-JD-gfM" kind="push" id="PQs-Nq-ujy"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -123,6 +124,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uwX-Ei-XsF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="907" y="-314"/>
+        </scene>
+        <!--Begin Game View Controller-->
+        <scene sceneID="B5n-i4-G00">
+            <objects>
+                <viewController id="EBM-JD-gfM" customClass="PHBeginGameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HrB-Qi-Iac"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zn0-BG-hDc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bhO-YU-Iqj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNb-pI-rX7">
+                                <rect key="frame" x="6" y="254" width="308" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="BeginButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="beginGame:" destination="EBM-JD-gfM" eventType="touchUpInside" id="1yW-9s-M23"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.38823529410000002" green="0.85490196080000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OOu-gt-Qr2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nnu-8b-bqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1315" y="-314"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6b0-at-aiz">
@@ -142,6 +174,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BeginButton" width="308" height="59"/>
         <image name="CreateGameButton" width="302" height="51"/>
         <image name="JoinGameButton" width="302" height="51"/>
     </resources>
