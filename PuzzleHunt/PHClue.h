@@ -13,9 +13,17 @@
 @property (nonatomic,strong) NSString *clueName;
 @property (nonatomic,strong) NSString *clueDescription;
 @property (nonatomic,strong) UIImage *clueImage;
-@property (nonatomic,strong) NSNumber *latitude;
-@property (nonatomic,strong) NSNumber *longitude;
+@property (nonatomic) NSUInteger latitude;
+@property (nonatomic) NSUInteger longitude;
 @property (nonatomic) NSUInteger time;              //Units in minutes
 @property (nonatomic,strong) NSArray *hints;
+
+- (id)initWithName:(NSString *)name
+       Description:(NSString *)description
+             Image:(UIImage *)image
+          Latitude:(NSUInteger)latitude
+         Longitude:(NSUInteger)longitude
+              Time:(NSUInteger)time
+             Hints:(NSArray *)hints;
 
 @end
