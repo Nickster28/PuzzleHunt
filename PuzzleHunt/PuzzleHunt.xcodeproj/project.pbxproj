@@ -33,7 +33,8 @@
 		016F4A721893C3BE005D0B3E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016F4A711893C3BE005D0B3E /* StoreKit.framework */; };
 		016F4A741893C3C4005D0B3E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016F4A731893C3C4005D0B3E /* SystemConfiguration.framework */; };
 		016F4A771893CAAB005D0B3E /* PHClue.m in Sources */ = {isa = PBXBuildFile; fileRef = 016F4A761893CAAB005D0B3E /* PHClue.m */; };
-		016F4A791893DF43005D0B3E /* Dincond-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 016F4A781893DF43005D0B3E /* Dincond-Bold.ttf */; };
+		016F4A7B1893E4F9005D0B3E /* PHLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016F4A7A1893E4F9005D0B3E /* PHLoginViewController.xib */; };
+		016F4A801893E802005D0B3E /* DIN Condensed Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 016F4A7F1893E802005D0B3E /* DIN Condensed Bold.ttf */; };
 		7B7F01091893C069005B58C2 /* PHGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7F01081893C069005B58C2 /* PHGame.m */; };
 /* End PBXBuildFile section */
 
@@ -81,7 +82,8 @@
 		016F4A731893C3C4005D0B3E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		016F4A751893CAAB005D0B3E /* PHClue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHClue.h; sourceTree = "<group>"; };
 		016F4A761893CAAB005D0B3E /* PHClue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHClue.m; sourceTree = "<group>"; };
-		016F4A781893DF43005D0B3E /* Dincond-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dincond-Bold.ttf"; sourceTree = "<group>"; };
+		016F4A7A1893E4F9005D0B3E /* PHLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHLoginViewController.xib; sourceTree = "<group>"; };
+		016F4A7F1893E802005D0B3E /* DIN Condensed Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN Condensed Bold.ttf"; sourceTree = "<group>"; };
 		7B7F01071893C069005B58C2 /* PHGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHGame.h; path = PuzzleHunt/PHGame.h; sourceTree = "<group>"; };
 		7B7F01081893C069005B58C2 /* PHGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHGame.m; path = PuzzleHunt/PHGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +176,7 @@
 				016F4A5E1893BC7F005D0B3E /* PHLoginViewController.h */,
 				016F4A5F1893BC7F005D0B3E /* PHLoginViewController.m */,
 				016F4A381893A8C3005D0B3E /* Main.storyboard */,
+				016F4A7A1893E4F9005D0B3E /* PHLoginViewController.xib */,
 				016F4A3E1893A8C3005D0B3E /* Images.xcassets */,
 				016F4A2D1893A8C3005D0B3E /* Supporting Files */,
 			);
@@ -183,7 +186,7 @@
 		016F4A2D1893A8C3005D0B3E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				016F4A781893DF43005D0B3E /* Dincond-Bold.ttf */,
+				016F4A7F1893E802005D0B3E /* DIN Condensed Bold.ttf */,
 				016F4A2E1893A8C3005D0B3E /* PuzzleHunt-Info.plist */,
 				016F4A2F1893A8C3005D0B3E /* InfoPlist.strings */,
 				016F4A321893A8C3005D0B3E /* main.m */,
@@ -290,9 +293,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				016F4A801893E802005D0B3E /* DIN Condensed Bold.ttf in Resources */,
 				016F4A3F1893A8C3005D0B3E /* Images.xcassets in Resources */,
 				016F4A311893A8C3005D0B3E /* InfoPlist.strings in Resources */,
-				016F4A791893DF43005D0B3E /* Dincond-Bold.ttf in Resources */,
+				016F4A7B1893E4F9005D0B3E /* PHLoginViewController.xib in Resources */,
 				016F4A3A1893A8C3005D0B3E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PHLoginViewController : UIViewController
+@interface PHLoginViewController : UIViewController <UITextFieldDelegate, UIScrollViewDelegate>
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 @property (nonatomic, weak) IBOutlet UITextField *phoneField;
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+@property (nonatomic, weak) IBOutlet UIButton *loginButton;
 
 
 - (IBAction)login:(id)sender;

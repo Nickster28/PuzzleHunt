@@ -28,7 +28,7 @@
 	<string>Main</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Dincond-Bold.ttf</string>
+		<string>DIN Condensed Bold.ttf</string>
 	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
