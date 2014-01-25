@@ -21,7 +21,9 @@
     
     NSString *helloString = [NSString stringWithFormat:@"Hello, %@!", [[NSUserDefaults standardUserDefaults] stringForKey:PHUserNameKey]];
     
-    [self.helloLabel setText:helloString];
+    NSUInteger spaceIndex = [helloString rangeOfString:@" " options:NSBackwardsSearch].location;
+    
+    [self.helloLabel setText:[[helloString substringToIndex:spaceIndex] stringByAppendingString: @"!"];
 }
 
 - (void)viewDidLoad
