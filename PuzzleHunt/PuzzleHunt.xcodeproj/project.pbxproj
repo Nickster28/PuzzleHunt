@@ -32,6 +32,7 @@
 		016F4A701893C3B9005D0B3E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016F4A6F1893C3B9005D0B3E /* Security.framework */; };
 		016F4A721893C3BE005D0B3E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016F4A711893C3BE005D0B3E /* StoreKit.framework */; };
 		016F4A741893C3C4005D0B3E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016F4A731893C3C4005D0B3E /* SystemConfiguration.framework */; };
+		7B7F01091893C069005B58C2 /* PHGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7F01081893C069005B58C2 /* PHGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 		016F4A6F1893C3B9005D0B3E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		016F4A711893C3BE005D0B3E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		016F4A731893C3C4005D0B3E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7B7F01071893C069005B58C2 /* PHGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHGame.h; path = PuzzleHunt/PHGame.h; sourceTree = "<group>"; };
+		7B7F01081893C069005B58C2 /* PHGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHGame.m; path = PuzzleHunt/PHGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

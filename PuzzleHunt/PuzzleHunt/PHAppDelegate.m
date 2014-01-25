@@ -28,9 +28,12 @@ NSString * const PHUserPhoneKey = @"PHUserPhoneKey";
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:PHIsLoggedInKey]) {
         
+        // Set up Parse
         [Parse setApplicationId:@"sh1737prUc7FOghj3pyY9ZllOq5ECbY5LHfRaW6i"
                       clientKey:@"G78uOxeHPxVnHujzTxgfmRbD8mCu17WnZnb9tHmN"];
         
+        // Register for push notifications
+        [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
     }
     
     
