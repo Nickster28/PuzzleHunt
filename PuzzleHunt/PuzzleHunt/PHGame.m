@@ -21,10 +21,11 @@
 }
 
 - (id)init {
-    return [self initWithName:@"Game" Description:@"" Clues:@[]];
+    NSMutableArray *emptyArray = [[NSMutableArray alloc] init];
+    return [self initWithName:@"Game" Description:@"" Clues:emptyArray];
 }
 
-- (void)addGameClues:(PHClue *)clue {
+- (void)addClue:(PHClue *)clue {
     [[self gameClues] addObject:clue];
 }
 
