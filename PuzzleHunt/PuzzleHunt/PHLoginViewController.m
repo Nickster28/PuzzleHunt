@@ -43,12 +43,6 @@
     [fader setFromValue:[NSNumber numberWithFloat:1.0]];
     [fader setToValue:[NSNumber numberWithFloat:0.0]];
     
-    CABasicAnimation *fader2 = [CABasicAnimation animationWithKeyPath:@"opacity"];
-    [fader2 setDuration:duration.doubleValue];
-    [fader2 setFromValue:[NSNumber numberWithFloat:1.0]];
-    [fader2 setToValue:[NSNumber numberWithFloat:0.0]];
-    
-    
     
     // Move the name field up
     double nameCenter = self.nameField.frame.origin.y + self.nameField.frame.size.height / 2.0;
@@ -69,6 +63,7 @@
     
     
     [self.titleLabel.layer setOpacity:0.0];
+    [self.loginButton.layer setOpacity:0.0];
     [self.nameField.layer setPosition:CGPointMake(160.0, nameCenter - kbHeight)];
     [self.phoneField.layer setPosition:CGPointMake(160.0, phoneCenter - kbHeight)];
     
@@ -78,7 +73,7 @@
                                 forKey:@"move"];
     [self.phoneField.layer addAnimation:phoneMover
                                  forKey:@"phoneMove"];
-    [self.loginButton.layer addAnimation:fader2
+    [self.loginButton.layer addAnimation:fader
                                   forKey:@"fadeLogin"];
 }
 
@@ -94,11 +89,6 @@
     [fader setDuration:duration.doubleValue];
     [fader setFromValue:[NSNumber numberWithFloat:0.0]];
     [fader setToValue:[NSNumber numberWithFloat:1.0]];
-    
-    CABasicAnimation *fader2 = [CABasicAnimation animationWithKeyPath:@"opacity"];
-    [fader2 setDuration:duration.doubleValue];
-    [fader2 setFromValue:[NSNumber numberWithFloat:0.0]];
-    [fader2 setToValue:[NSNumber numberWithFloat:1.0]];
     
     
     // Move the name field down
@@ -120,6 +110,7 @@
     
     
     [self.titleLabel.layer setOpacity:1.0];
+    [self.loginButton.layer setOpacity:1.0];
     [self.nameField.layer setPosition:CGPointMake(160.0, nameCenter + kbHeight)];
     [self.phoneField.layer setPosition:CGPointMake(160.0, phoneCenter + kbHeight)];
     
@@ -129,7 +120,7 @@
                                 forKey:@"move"];
     [self.phoneField.layer addAnimation:phoneMover
                                  forKey:@"phoneMove"];
-    [self.loginButton.layer addAnimation:fader2
+    [self.loginButton.layer addAnimation:fader
                                   forKey:@"fadeLogin"];
 
 }
