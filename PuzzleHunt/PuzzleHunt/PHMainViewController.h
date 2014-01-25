@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface PHMainViewController : UIViewController
-
+@property (nonatomic, weak) IBOutlet UILabel *helloLabel;
 @end

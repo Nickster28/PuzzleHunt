@@ -18,6 +18,8 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
+    [self.helloLabel setText:[NSString stringWithFormat:@"Hello, %@!", [[NSUserDefaults standardUserDefaults] stringForKey:PHUserNameKey]]];
 }
 
 - (void)viewDidLoad
@@ -26,6 +28,8 @@
 	// Do any additional setup after loading the view.
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:PHIsLoggedInKey]) {
+        
+        [self.helloLabel setText:@"Hello!"];
         
         // Delay the modal popup
         double delayInSeconds = 0.7;
