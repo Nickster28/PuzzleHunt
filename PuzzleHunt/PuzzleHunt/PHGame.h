@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "PHClue.h"
 
-@interface PHGame : NSObject
+@interface PHGame : NSObject <NSCoding>
 
 @property (nonatomic,strong) NSString *gameName;
 @property (nonatomic,strong) NSString *gameDescription;

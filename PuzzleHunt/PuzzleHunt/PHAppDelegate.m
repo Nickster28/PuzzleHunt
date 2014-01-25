@@ -8,7 +8,6 @@
 
 #import "PHAppDelegate.h"
 #import <Parse/Parse.h>
-
 NSString * const PHIsLoggedInKey = @"PHIsLoggedInKey";
 NSString * const PHUserNameKey = @"PHUserNameKey";
 NSString * const PHUserPhoneKey = @"PHUserPhoneKey";
