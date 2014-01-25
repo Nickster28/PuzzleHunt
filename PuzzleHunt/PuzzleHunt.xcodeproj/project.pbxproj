@@ -24,7 +24,6 @@
 		016F4A521893A8C4005D0B3E /* PuzzleHuntTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 016F4A511893A8C4005D0B3E /* PuzzleHuntTests.m */; };
 		016F4A5D1893BC70005D0B3E /* PHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016F4A5C1893BC70005D0B3E /* PHMainViewController.m */; };
 		016F4A601893BC7F005D0B3E /* PHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016F4A5F1893BC7F005D0B3E /* PHLoginViewController.m */; };
-		016F4A621893C323005D0B3E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016F4A611893C323005D0B3E /* Parse.framework */; };
 		016F4A641893C392005D0B3E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016F4A631893C392005D0B3E /* AudioToolbox.framework */; };
 		016F4A661893C398005D0B3E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016F4A651893C398005D0B3E /* CFNetwork.framework */; };
 		016F4A681893C3A5005D0B3E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016F4A671893C3A5005D0B3E /* CoreLocation.framework */; };
@@ -39,6 +38,7 @@
 		016F4A801893E802005D0B3E /* DIN Condensed Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 016F4A7F1893E802005D0B3E /* DIN Condensed Bold.ttf */; };
 		019996EB1894479900D98051 /* PHCreatedGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 019996EA1894479900D98051 /* PHCreatedGamesViewController.m */; };
 		7B10547A1894380800D86E52 /* PHMapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1054791894380800D86E52 /* PHMapPoint.m */; };
+		7B10547C1894592B00D86E52 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B10547B1894592B00D86E52 /* Parse.framework */; };
 		7B7F01091893C069005B58C2 /* PHGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7F01081893C069005B58C2 /* PHGame.m */; };
 /* End PBXBuildFile section */
 
@@ -78,7 +78,6 @@
 		016F4A5C1893BC70005D0B3E /* PHMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHMainViewController.m; sourceTree = "<group>"; };
 		016F4A5E1893BC7F005D0B3E /* PHLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHLoginViewController.h; sourceTree = "<group>"; };
 		016F4A5F1893BC7F005D0B3E /* PHLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHLoginViewController.m; sourceTree = "<group>"; };
-		016F4A611893C323005D0B3E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		016F4A631893C392005D0B3E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		016F4A651893C398005D0B3E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		016F4A671893C3A5005D0B3E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -96,6 +95,7 @@
 		019996EA1894479900D98051 /* PHCreatedGamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHCreatedGamesViewController.m; sourceTree = "<group>"; };
 		7B1054781894380800D86E52 /* PHMapPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHMapPoint.h; path = PuzzleHunt/PHMapPoint.h; sourceTree = "<group>"; };
 		7B1054791894380800D86E52 /* PHMapPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHMapPoint.m; path = PuzzleHunt/PHMapPoint.m; sourceTree = "<group>"; };
+		7B10547B1894592B00D86E52 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		7B7F01071893C069005B58C2 /* PHGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHGame.h; path = PuzzleHunt/PHGame.h; sourceTree = "<group>"; };
 		7B7F01081893C069005B58C2 /* PHGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHGame.m; path = PuzzleHunt/PHGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,12 +111,12 @@
 				016F4A6E1893C3B4005D0B3E /* QuartzCore.framework in Frameworks */,
 				016F4A6C1893C3AF005D0B3E /* MobileCoreServices.framework in Frameworks */,
 				016F4A6A1893C3AB005D0B3E /* libz.dylib in Frameworks */,
+				7B10547C1894592B00D86E52 /* Parse.framework in Frameworks */,
 				016F4A681893C3A5005D0B3E /* CoreLocation.framework in Frameworks */,
 				016F4A291893A8C3005D0B3E /* CoreGraphics.framework in Frameworks */,
 				016F4A661893C398005D0B3E /* CFNetwork.framework in Frameworks */,
 				016F4A641893C392005D0B3E /* AudioToolbox.framework in Frameworks */,
 				016F4A2B1893A8C3005D0B3E /* UIKit.framework in Frameworks */,
-				016F4A621893C323005D0B3E /* Parse.framework in Frameworks */,
 				016F4A271893A8C3005D0B3E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,7 +157,7 @@
 		016F4A251893A8C3005D0B3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				016F4A611893C323005D0B3E /* Parse.framework */,
+				7B10547B1894592B00D86E52 /* Parse.framework */,
 				016F4A731893C3C4005D0B3E /* SystemConfiguration.framework */,
 				016F4A711893C3BE005D0B3E /* StoreKit.framework */,
 				016F4A6F1893C3B9005D0B3E /* Security.framework */,
@@ -484,6 +484,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Nick/Desktop/PuzzleHunt/PuzzleHunt,
+					/Users/kristen/Desktop/hacktech/PuzzleHunt/PuzzleHunt,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PuzzleHunt/PuzzleHunt-Prefix.pch";
@@ -502,6 +503,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Nick/Desktop/PuzzleHunt/PuzzleHunt,
+					/Users/kristen/Desktop/hacktech/PuzzleHunt/PuzzleHunt,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PuzzleHunt/PuzzleHunt-Prefix.pch";
