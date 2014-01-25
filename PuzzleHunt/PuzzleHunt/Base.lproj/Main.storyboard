@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="sOk-Ii-Y8R">
             <objects>
-                <viewController id="k4w-ga-sGA" sceneMemberID="viewController">
+                <viewController id="k4w-ga-sGA" customClass="PHMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nLk-2B-XfW"/>
                         <viewControllerLayoutGuide type="bottom" id="bv7-qj-pcf"/>
@@ -18,15 +18,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="CqW-r1-HDP"/>
+                    <connections>
+                        <segue destination="JBQ-rm-Ybw" kind="modal" identifier="showLoginScreen" id="oPp-mV-l33"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RBb-p0-w8s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="479" y="14"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="hcD-GE-xn9">
             <objects>
-                <viewController id="JBQ-rm-Ybw" sceneMemberID="viewController">
+                <viewController id="JBQ-rm-Ybw" customClass="PHLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xwr-oV-qOX"/>
                         <viewControllerLayoutGuide type="bottom" id="5E1-0w-SIa"/>

@@ -8,6 +8,11 @@
 
 #import "PHAppDelegate.h"
 
+NSString * const PHIsLoggedInKey = @"PHIsLoggedInKey";
+NSString * const PHUserNameKey = @"PHUserNameKey";
+NSString * const PHUserPhoneKey = @"PHUserPhoneKey";
+
+
 @implementation PHAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
