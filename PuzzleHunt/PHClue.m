@@ -13,8 +13,8 @@
 - (id)initWithName:(NSString *)name
        Description:(NSString *)description
              //Image:(UIImage *)image
-          Latitude:(NSUInteger)latitude
-         Longitude:(NSUInteger)longitude
+          Latitude:(NSNumber *)latitude
+         Longitude:(NSNumber *)longitude
               Time:(NSUInteger)time
              Hints:(NSArray *)hints {
     self = [super init];
@@ -31,7 +31,7 @@
 }
 
 - (id)init {
-    return [self initWithName:@"" Description:@"" Latitude:0 Longitude:0 Time:0 Hints:@[]];
+    return [self initWithName:@"" Description:@"" Latitude:@0 Longitude:@0 Time:0 Hints:@[]];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -39,8 +39,8 @@
     if(self) {
         [self setClueName:[aDecoder decodeObjectForKey:@"clueName"]];
         [self setClueDescription:[aDecoder decodeObjectForKey:@"clueDescription"]];
-        [self setLatitude:[aDecoder decodeIntegerForKey:@"latitude"]];
-        [self setLongitude:[aDecoder decodeIntegerForKey:@"longitude"]];
+        [self setLatitude:[aDecoder decodeObjectForKey:@"latitude"]];
+        [self setLongitude:[aDecoder decodeObjectForKey:@"longitude"]];
         [self setTime:[aDecoder decodeIntegerForKey:@"time"]];
         [self setHints:[aDecoder decodeObjectForKey:@"hints"]];
     }
@@ -50,8 +50,8 @@
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:_clueName forKey:@"clueName"];
     [aCoder encodeObject:_clueDescription forKey:@"clueDescription"];
-    [aCoder encodeInteger:_latitude forKey:@"latitude"];
-    [aCoder encodeInteger:_longitude forKey:@"longitude"];
+    [aCoder encodeObject:_latitude forKey:@"latitude"];
+    [aCoder encodeObject:_longitude forKey:@"longitude"];
     [aCoder encodeObject:_hints forKey:@"hints"];
 }
 

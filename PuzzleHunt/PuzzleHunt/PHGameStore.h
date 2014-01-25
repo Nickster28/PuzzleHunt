@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class PHGame;
 @interface PHGameStore : NSObject
 
 + (PHGameStore *)sharedStore;
+
+- (void)uploadGame:(PHGame *)game;
 
 @end
