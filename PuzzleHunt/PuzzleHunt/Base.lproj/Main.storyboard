@@ -22,6 +22,9 @@
                                 <state key="normal" image="CreateGameButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="LfH-ck-RJv" kind="push" id="lfW-qA-M8Y"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHg-mx-oDF">
                                 <rect key="frame" x="9" y="406" width="302" height="51"/>
@@ -56,12 +59,32 @@
             </objects>
             <point key="canvasLocation" x="479" y="14"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="z9P-Pl-05X">
+            <objects>
+                <viewController id="LfH-ck-RJv" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6gN-zb-zkj"/>
+                        <viewControllerLayoutGuide type="bottom" id="aZm-cM-vbq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VhE-Bv-nl1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.38823529410000002" green="0.85490196080000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jf8-Bw-a1M"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZeK-ds-YaH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944" y="-314"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="6b0-at-aiz">
             <objects>
                 <navigationController definesPresentationContext="YES" id="Hdf-GT-TDC" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="l1T-GC-qy0">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.34901960784313724" green="0.76470588235294112" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="k4w-ga-sGA" kind="relationship" relationship="rootViewController" id="Mmg-SW-X9S"/>

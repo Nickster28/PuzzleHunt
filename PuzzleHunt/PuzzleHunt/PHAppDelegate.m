@@ -33,6 +33,8 @@ NSString * const PHCurrentLongitude = @"PHCurrentLongitude";
     
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
     
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:PHIsLoggedInKey]) {
         
