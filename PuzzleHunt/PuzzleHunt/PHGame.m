@@ -16,6 +16,14 @@
         [self setGameName:name];
         [self setGameDescription:description];
         [self setGameClues:clues];
+        
+        NSUInteger totalMin = 0;
+        
+        for (PHClue *currClue in [self gameClues]) {
+            totalMin += [currClue time];
+        }
+        
+        [self setTotalTime:totalMin];
     }
     return self;
 }
@@ -31,6 +39,7 @@
         [self setGameName:[aDecoder decodeObjectForKey:@"gameName"]];
         [self setGameDescription:[aDecoder decodeObjectForKey:@"gameDescription"]];
         [self setGameClues:[aDecoder decodeObjectForKey:@"gameClues"]];
+        [self setTotalTime:[aDecoder decodeIntegerForKey:@"totalTime"]];
     }
     return self;
 }
@@ -39,10 +48,13 @@
     [aCoder encodeObject:_gameName forKey:@"gameName"];
     [aCoder encodeObject:_gameDescription forKey:@"gameDescription"];
     [aCoder encodeObject:_gameClues forKey:@"gameClues"];
+    [aCoder encodeInteger:_totalTime forKey:@"totalTime"];
 }
 
 - (void)addClue:(PHClue *)clue {
     [[self gameClues] addObject:clue];
+    
+    [self setTotalTime:[self totalTime] + [clue time]];
 }
 
 

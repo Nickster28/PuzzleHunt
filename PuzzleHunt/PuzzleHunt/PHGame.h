@@ -14,6 +14,7 @@
 @property (nonatomic,strong) NSString *gameName;
 @property (nonatomic,strong) NSString *gameDescription;
 @property (nonatomic,strong) NSMutableArray *gameClues;
+@property (nonatomic) NSUInteger totalTime;
 
 - (id)initWithName:(NSString *)name Description:(NSString *)description Clues:(NSMutableArray *)clues;
 
