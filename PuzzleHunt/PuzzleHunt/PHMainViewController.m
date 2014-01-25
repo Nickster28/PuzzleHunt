@@ -23,7 +23,7 @@
     
     NSUInteger spaceIndex = [helloString rangeOfString:@" " options:NSBackwardsSearch].location;
     
-    [self.helloLabel setText:[[helloString substringToIndex:spaceIndex] stringByAppendingString: @"!"];
+    [self.helloLabel setText:[[helloString substringToIndex:spaceIndex] stringByAppendingString: @"!"]];
 }
 
 - (void)viewDidLoad
