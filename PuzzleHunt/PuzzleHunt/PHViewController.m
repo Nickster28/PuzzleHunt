@@ -9,7 +9,7 @@
 #import "PHViewController.h"
 
 @interface PHViewController ()
-
+@property (nonatomic, strong) NSArray *testArray;
 @end
 
 @implementation PHViewController
