@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		015AE41518944E3D00016E04 /* PHGameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AE41418944E3D00016E04 /* PHGameCell.m */; };
+		015AE418189454A100016E04 /* PHGameStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AE417189454A100016E04 /* PHGameStore.m */; };
 		016F4A271893A8C3005D0B3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016F4A261893A8C3005D0B3E /* Foundation.framework */; };
 		016F4A291893A8C3005D0B3E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016F4A281893A8C3005D0B3E /* CoreGraphics.framework */; };
 		016F4A2B1893A8C3005D0B3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016F4A2A1893A8C3005D0B3E /* UIKit.framework */; };
@@ -54,6 +55,8 @@
 /* Begin PBXFileReference section */
 		015AE41318944E3D00016E04 /* PHGameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHGameCell.h; sourceTree = "<group>"; };
 		015AE41418944E3D00016E04 /* PHGameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHGameCell.m; sourceTree = "<group>"; };
+		015AE416189454A100016E04 /* PHGameStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHGameStore.h; path = PuzzleHunt/PHGameStore.h; sourceTree = "<group>"; };
+		015AE417189454A100016E04 /* PHGameStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHGameStore.m; path = PuzzleHunt/PHGameStore.m; sourceTree = "<group>"; };
 		016F4A231893A8C3005D0B3E /* PuzzleHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuzzleHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		016F4A261893A8C3005D0B3E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		016F4A281893A8C3005D0B3E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -226,6 +229,8 @@
 		019996E81894476B00D98051 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				015AE416189454A100016E04 /* PHGameStore.h */,
+				015AE417189454A100016E04 /* PHGameStore.m */,
 				7B1054781894380800D86E52 /* PHMapPoint.h */,
 				7B1054791894380800D86E52 /* PHMapPoint.m */,
 				016F4A751893CAAB005D0B3E /* PHClue.h */,
@@ -346,6 +351,7 @@
 				015AE41518944E3D00016E04 /* PHGameCell.m in Sources */,
 				016F4A601893BC7F005D0B3E /* PHLoginViewController.m in Sources */,
 				019996EB1894479900D98051 /* PHCreatedGamesViewController.m in Sources */,
+				015AE418189454A100016E04 /* PHGameStore.m in Sources */,
 				7B7F01091893C069005B58C2 /* PHGame.m in Sources */,
 				016F4A331893A8C3005D0B3E /* main.m in Sources */,
 			);
