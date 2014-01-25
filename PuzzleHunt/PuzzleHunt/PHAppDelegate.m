@@ -7,6 +7,7 @@
 //
 
 #import "PHAppDelegate.h"
+#import <Parse/Parse.h>
 
 NSString * const PHIsLoggedInKey = @"PHIsLoggedInKey";
 NSString * const PHUserNameKey = @"PHUserNameKey";
@@ -23,6 +24,14 @@ NSString * const PHUserPhoneKey = @"PHUserPhoneKey";
                                PHUserPhoneKey: @""};
     
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+    
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:PHIsLoggedInKey]) {
+        
+        [Parse setApplicationId:@"sh1737prUc7FOghj3pyY9ZllOq5ECbY5LHfRaW6i"
+                      clientKey:@"G78uOxeHPxVnHujzTxgfmRbD8mCu17WnZnb9tHmN"];
+        
+    }
     
     
     // Override point for customization after application launch.

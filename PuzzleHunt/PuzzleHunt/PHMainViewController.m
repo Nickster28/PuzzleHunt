@@ -7,6 +7,7 @@
 //
 
 #import "PHMainViewController.h"
+#import "PHAppDelegate.h"
 
 @interface PHMainViewController ()
 
@@ -27,8 +28,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    
 }
 
 
