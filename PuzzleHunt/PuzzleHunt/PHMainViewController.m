@@ -19,7 +19,9 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
-    [self.helloLabel setText:[NSString stringWithFormat:@"Hello, %@!", [[NSUserDefaults standardUserDefaults] stringForKey:PHUserNameKey]]];
+    NSString *helloString = [NSString stringWithFormat:@"Hello, %@!", [[NSUserDefaults standardUserDefaults] stringForKey:PHUserNameKey]];
+    
+    [self.helloLabel setText:helloString];
 }
 
 - (void)viewDidLoad
