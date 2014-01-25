@@ -11,6 +11,11 @@
 extern NSString * const PHIsLoggedInKey;
 extern NSString * const PHUserNameKey;
 extern NSString * const PHUserPhoneKey;
+extern NSString * const PHUserScore;
+extern NSString * const PHCurrentClue;
+extern NSString * const PHClueTime;
+extern NSString * const PHCurrentLatitude;
+extern NSString * const PHCurrentLongitude;
 
 @interface PHAppDelegate : UIResponder <UIApplicationDelegate>
 

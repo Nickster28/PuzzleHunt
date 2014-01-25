@@ -11,7 +11,11 @@
 NSString * const PHIsLoggedInKey = @"PHIsLoggedInKey";
 NSString * const PHUserNameKey = @"PHUserNameKey";
 NSString * const PHUserPhoneKey = @"PHUserPhoneKey";
-
+NSString * const PHUserScore = @"PHUserScore";
+NSString * const PHCurrentClue = @"PHCurrentClue";
+NSString * const PHClueTime = @"PHClueTime";
+NSString * const PHCurrentLatitude = @"PHCurrentLatitude";
+NSString * const PHCurrentLongitude = @"PHCurrentLongitude";
 
 @implementation PHAppDelegate
 
@@ -20,7 +24,12 @@ NSString * const PHUserPhoneKey = @"PHUserPhoneKey";
     // Set the initial values for the user's info
     NSDictionary *defaults = @{PHIsLoggedInKey: [NSNumber numberWithBool:NO],
                                PHUserNameKey: @"",
-                               PHUserPhoneKey: @""};
+                               PHUserPhoneKey: @"",
+                               PHUserScore: @0,
+                               PHCurrentClue: @1,
+                               PHClueTime: @0,
+                               PHCurrentLatitude: @0,
+                               PHCurrentLongitude: @0};
     
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
     
