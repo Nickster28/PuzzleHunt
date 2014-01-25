@@ -21,13 +21,17 @@
     
     NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:PHUserNameKey];
     
-    NSUInteger spaceIndex = [username rangeOfString:@" "].location ? : [username length]-1;
+    NSRange spaceRange = [username rangeOfString:@" "];
+    NSString *formattedString = @"";
+    if(spaceRange.location != NSNotFound) {
+        formattedString = [@", " stringByAppendingString:[username substringToIndex:spaceRange.location]];
+    } else if([username length] > 0) {
+        formattedString = [@", " stringByAppendingString:username];
+    }
     
-    NSString *helloString = [NSString stringWithFormat:@"Hello, %@!",[username substringToIndex:spaceIndex]];
+    NSString *helloString = [NSString stringWithFormat:@"Hello%@!",formattedString];
     
-
-    
-    [self.helloLabel setText:[[helloString substringToIndex:spaceIndex] stringByAppendingString: @"!"]];
+    [self.helloLabel setText:helloString];
 }
 
 - (void)viewDidLoad
