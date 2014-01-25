@@ -7,6 +7,7 @@
 //
 
 #import "PHLoginViewController.h"
+#import "PHAppDelegate.h"
 
 @interface PHLoginViewController ()
 
@@ -33,6 +34,21 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (IBAction)login:(id)sender
+{
+    [[NSUserDefaults standardUserDefaults] setObject:[[self nameField] text]
+                                              forKey:PHUserNameKey];
+    [[NSUserDefaults standardUserDefaults] setObject:[[self phoneField] text]
+                                              forKey:PHUserPhoneKey];
+    [[NSUserDefaults standardUserDefaults] setBool:YES
+                                            forKey:PHIsLoggedInKey];
+    
+    
+    [[self presentingViewController] dismissViewControllerAnimated:YES
+                                                        completion:nil];
 }
 
 @end

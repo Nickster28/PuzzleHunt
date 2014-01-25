@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface PHLoginViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UITextField *nameField;
+@property (nonatomic, weak) IBOutlet UITextField *phoneField;
+
+
+- (IBAction)login:(id)sender;
 
 @end

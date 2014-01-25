@@ -33,6 +33,7 @@
 		016F4A721893C3BE005D0B3E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016F4A711893C3BE005D0B3E /* StoreKit.framework */; };
 		016F4A741893C3C4005D0B3E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016F4A731893C3C4005D0B3E /* SystemConfiguration.framework */; };
 		016F4A771893CAAB005D0B3E /* PHClue.m in Sources */ = {isa = PBXBuildFile; fileRef = 016F4A761893CAAB005D0B3E /* PHClue.m */; };
+		016F4A791893DF43005D0B3E /* Dincond-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 016F4A781893DF43005D0B3E /* Dincond-Bold.ttf */; };
 		7B7F01091893C069005B58C2 /* PHGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7F01081893C069005B58C2 /* PHGame.m */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		016F4A731893C3C4005D0B3E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		016F4A751893CAAB005D0B3E /* PHClue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHClue.h; sourceTree = "<group>"; };
 		016F4A761893CAAB005D0B3E /* PHClue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHClue.m; sourceTree = "<group>"; };
+		016F4A781893DF43005D0B3E /* Dincond-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dincond-Bold.ttf"; sourceTree = "<group>"; };
 		7B7F01071893C069005B58C2 /* PHGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHGame.h; path = PuzzleHunt/PHGame.h; sourceTree = "<group>"; };
 		7B7F01081893C069005B58C2 /* PHGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHGame.m; path = PuzzleHunt/PHGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,6 +183,7 @@
 		016F4A2D1893A8C3005D0B3E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				016F4A781893DF43005D0B3E /* Dincond-Bold.ttf */,
 				016F4A2E1893A8C3005D0B3E /* PuzzleHunt-Info.plist */,
 				016F4A2F1893A8C3005D0B3E /* InfoPlist.strings */,
 				016F4A321893A8C3005D0B3E /* main.m */,
@@ -289,6 +292,7 @@
 			files = (
 				016F4A3F1893A8C3005D0B3E /* Images.xcassets in Resources */,
 				016F4A311893A8C3005D0B3E /* InfoPlist.strings in Resources */,
+				016F4A791893DF43005D0B3E /* Dincond-Bold.ttf in Resources */,
 				016F4A3A1893A8C3005D0B3E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
