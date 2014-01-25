@@ -19,9 +19,13 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
-    NSString *helloString = [NSString stringWithFormat:@"Hello, %@!", [[NSUserDefaults standardUserDefaults] stringForKey:PHUserNameKey]];
+    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:PHUserNameKey];
     
-    NSUInteger spaceIndex = [helloString rangeOfString:@" " options:NSBackwardsSearch].location;
+    NSUInteger spaceIndex = [username rangeOfString:@" "].location ? : [username length]-1;
+    
+    NSString *helloString = [NSString stringWithFormat:@"Hello, %@!",[username substringToIndex:spaceIndex]];
+    
+
     
     [self.helloLabel setText:[[helloString substringToIndex:spaceIndex] stringByAppendingString: @"!"]];
 }
