@@ -10,6 +10,7 @@
 
 extern NSString * const PHIsLoggedInKey;
 extern NSString * const PHUserNameKey;
+extern NSString * const PHUserPhoneKey;
 
 @interface PHAppDelegate : UIResponder <UIApplicationDelegate>
 
