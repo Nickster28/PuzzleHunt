@@ -53,9 +53,22 @@
 }
 
 - (void)fetchLiveGamesWithCompletionBlock:(void (^)(NSArray *liveGames, NSError *err))completionBlock {
-    PFQuery *query = [PFQuery queryWithClassName:@"Game"];
+    /*PFQuery *query = [PFQuery queryWithClassName:@"Game"];
     [query orderByAscending:@"gameName"];
-    [query findObjectsInBackgroundWithBlock:completionBlock];
+    [query findObjectsInBackgroundWithBlock:completionBlock];*/
+    
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    NSArray *names = @[@"Nick", @"Kristen", @"Bharad", @"Avi"];
+    
+    for (int i = 0; i < 4; i++) {
+        PHGame *game = [[PHGame alloc] initWithName:[names objectAtIndex:i]
+                                        Description:@"This is a puzzlehunt game for the ages!"
+                                              Clues:nil];
+        
+        [array addObject:game];
+    }
+    
+    completionBlock(array, nil);
 }
 
 @end
