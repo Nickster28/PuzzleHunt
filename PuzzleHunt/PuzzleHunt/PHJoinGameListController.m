@@ -32,6 +32,15 @@
     
     self.navigationController.navigationBar.titleTextAttributes = navBarTextAttributes;
     
+    // Change the background to blue
+    self.tableView.backgroundView = nil;
+    self.tableView.backgroundColor = [UIColor colorWithRed:99.0/255.0
+                                                     green:218.0/255.0
+                                                      blue:255.0/255.0
+                                                     alpha:1.0];
+    
+    
+    // Fetch the current live games
     [[PHGameStore sharedStore] fetchLiveGamesWithCompletionBlock:^(NSArray *liveGames, NSError *err) {
         if (err) {
             NSLog(@"Live fetching of games didn't work");
@@ -44,6 +53,8 @@
 
 - (void)convertArrayToDictionary:(NSArray *)games
 {
+    // Loop through the array of games, sorting them into dictionary
+    // buckets (arrays) by the first letter of their name
     [self setGameSections:[[NSMutableDictionary alloc] init]];
     for(PFObject *game in games) {
         NSString *firstGameLetter = [[[game valueForKey:@"gameName"] substringToIndex:1] uppercaseString];
@@ -85,10 +96,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"gameNameCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    // [[cell textLabel] setText...]
     
     return cell;
 }
