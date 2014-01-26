@@ -7,9 +7,9 @@
 //
 
 #import "PHCreateGameInfoViewController.h"
+#import "PHGame.h"
 
 @interface PHCreateGameInfoViewController ()
-
 @end
 
 @implementation PHCreateGameInfoViewController
@@ -41,13 +41,18 @@
     [self.descriptionPlaceholderLabel.layer addAnimation:animation
                                                   forKey:@"opacityChange"];
     
+    [self.descriptionPlaceholderLabel setHidden:YES];
+    
+    
     return TRUE;
 }
 
 
 - (IBAction)makeClues:(id)sender
 {
-    
+    PHGame *game = [[PHGame alloc] initWithName:[[self nameField] text]
+                                    Description:[[self descriptionTextView] text]
+                                          Clues:[NSMutableArray array]];
 }
 
 
@@ -63,6 +68,7 @@
     [textField resignFirstResponder];
     return TRUE;
 }
+
 
 
 - (void)textViewDidChange:(UITextView *)textView
