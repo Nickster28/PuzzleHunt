@@ -13,18 +13,10 @@
 #import "PHGameStore.h"
 
 @interface PHClueLocationViewController ()
-
+@property (nonatomic, strong) PHMapPoint *currPoint;
 @end
 
 @implementation PHClueLocationViewController
-
-
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
 
 
 //@property (nonatomic, weak) IBOutlet MKMapView *mapView;
@@ -36,6 +28,7 @@
     // Get the text from the text view...
     NSString *placeName = [textField text];
     
+    // Create a search request with the text
     MKLocalSearchRequest *searchRequest = [[MKLocalSearchRequest alloc] init];
     [searchRequest setNaturalLanguageQuery: placeName];
     [searchRequest setRegion:MKCoordinateRegionMakeWithDistance([[[PHGameStore sharedStore] currLocation] coordinate], 100000, 100000)];
@@ -44,13 +37,18 @@
     [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
         
         if (!error) {
+            // Get the first map item and pull its coordinates
             MKMapItem *loc = [[response mapItems] objectAtIndex:0];
             [self setLatitude:[NSNumber numberWithDouble:loc.placemark.coordinate.latitude]];
             [self setLongitude:[NSNumber numberWithDouble:loc.placemark.coordinate.longitude]];
             
+            // Remove the old pin and add a new pin
             PHMapPoint *point = [[PHMapPoint alloc] initWithLatitude:[self latitude] Longitude:[self longitude] Team:@""];
+            [[self mapView] removeAnnotation:self.currPoint];
             [[self mapView] addAnnotation:point];
+            [self setCurrPoint:point];
             
+            // Zoom in on the pin
             MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc.placemark.coordinate,1000,1000);
             [[self mapView] setRegion:region animated:YES];
         }

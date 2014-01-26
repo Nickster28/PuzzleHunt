@@ -17,8 +17,15 @@
 @end
 
 
+@protocol ClueDescriptionDelegate <NSObject>
+
+- (void)userEnteredClueWithText:(NSString *)text;
+
+@end
+
+
 @class PHClue;
-@interface PHCreateClueViewController : UITableViewController <LocationFinderDelegate>
+@interface PHCreateClueViewController : UITableViewController <LocationFinderDelegate, ClueDescriptionDelegate>
 @property (nonatomic, weak) id <ClueCreatorDelegate> clueDelegate;
 @property (nonatomic, strong) PHClue *clue;
 @end
