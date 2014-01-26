@@ -37,11 +37,6 @@
     return pfClue;
 }
 
-- (void)uploadClue:(PHClue *)clue {
-    PFObject *pfClue = [self createPFObjectFromClue:clue];
-    [pfClue saveInBackground];
-}
-
 - (void)uploadGame:(PHGame *)game {
     NSMutableArray *pfClueMutableArray = [[NSMutableArray alloc]init];
     for (PHClue *clue in [game gameClues]) {
@@ -50,7 +45,7 @@
     
     PFObject *pfGame = [PFObject objectWithClassName:@"Game"];
     pfGame[@"gameName"] = [game gameName];
-    pfGame[@"gameClues"] = pfClueMutableArray;
+    pfGame[@"clues"] = pfClueMutableArray;
     pfGame[@"gameDescription"] = [game gameDescription];
     pfGame[@"totalTime"] = [[NSNumber alloc] initWithInteger:[game totalTime]];
     
