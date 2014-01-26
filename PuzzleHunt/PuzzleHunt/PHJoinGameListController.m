@@ -56,12 +56,16 @@
     // Loop through the array of games, sorting them into dictionary
     // buckets (arrays) by the first letter of their name
     [self setGameSections:[[NSMutableDictionary alloc] init]];
+    
+    //Create an empty bucket for each letter of the alphabet
+    for(int i = 0; i < 26; i++) {
+        [[self gameSections] setValue:[[NSMutableArray alloc] init] forKey:[self getKeyForSection:i]];
+    }
+    
+    //Add all games to appropriate bucket
     for(PFObject *game in games) {
         NSString *firstGameLetter = [[[game valueForKey:@"gameName"] substringToIndex:1] uppercaseString];
         NSMutableArray *currSectionGames = [[self gameSections] objectForKey:firstGameLetter];
-        if(!currSectionGames) {
-            currSectionGames = [[NSMutableArray alloc] init];
-        }
         [currSectionGames addObject:game];
         [[self gameSections] setValue:currSectionGames forKey:firstGameLetter];
     }
@@ -91,9 +95,21 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [self getKeyForSection:section];
+    NSInteger currSection = section;
+    NSString *currKey = [self getKeyForSection:currSection];
+    /*while(currSection >= 0 && ![[self gameSections] objectForKey:currKey]) {
+        currKey = [self getKeyForSection:currSection];
+        currSection -= 1;
+    }
+    while(currSection <= [[[self gameSections] allKeys] count] - 1 && ![[self gameSections] objectForKey:currKey]) {
+        currKey = [self getKeyForSection:currSection];
+        currSection += 1;
+    }
+    if(![[self gameSections] objectForKey:currKey]) return @"";*/
+    return currKey;
 }
 
+//Configure values of each cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"gameNameCell";
@@ -103,10 +119,20 @@
     
     [[cell textLabel] setText: [currGames objectAtIndex:[indexPath row]]];
     
-    // Configure the cell...
-    // [[cell textLabel] setText...]   [indexPath row]   [indexPath section]
-    
     return cell;
+}
+
+//Array of titles to display for index on the side
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    NSString *alphabet = @"A B C D E F G H I J K L M N O P Q R S T U V W X Y Z";
+    
+    return [alphabet componentsSeparatedByString:@" "];
+}
+
+//Return the section index based on the index in the side scroll (should be identical)
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
+    return index;
 }
 
 @end
