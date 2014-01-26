@@ -24,6 +24,8 @@
 {
     [super viewDidLoad];
     
+    self.navigationController.navigationBarHidden = NO;
+    
     UIColor *offWhite = [UIColor colorWithRed:246.0f/255.0f green:246.0f/255.0f blue:246.0f/255.0f alpha:1.0];
     
     NSMutableDictionary *navBarTextAttributes = [NSMutableDictionary dictionaryWithCapacity:1];
