@@ -71,4 +71,12 @@
     completionBlock(array, nil);
 }
 
+
+- (void)fetchAllCluesWithCompletionBlock:(void (^)(NSArray *, NSError *))completionBlock
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Clue"];
+    [query orderByAscending:@"duration"];
+    [query findObjectsInBackgroundWithBlock:completionBlock];
+}
+
 @end

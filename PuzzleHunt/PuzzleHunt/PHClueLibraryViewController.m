@@ -7,32 +7,25 @@
 //
 
 #import "PHClueLibraryViewController.h"
+#import "PHGameStore.h"
 
 @interface PHClueLibraryViewController ()
-
+@property (nonatomic, strong) NSArray *clues;
 @end
 
 @implementation PHClueLibraryViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [[PHGameStore sharedStore] fetchAllCluesWithCompletionBlock:^(NSArray *clues, NSError *err) {
+        [self setClues:clues];
+        [self.tableView reloadData];
+    }];
 }
+
 
 - (void)didReceiveMemoryWarning
 {

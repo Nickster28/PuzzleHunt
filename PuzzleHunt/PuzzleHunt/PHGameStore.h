@@ -17,4 +17,6 @@
 
 - (void)fetchLiveGamesWithCompletionBlock:(void (^)(NSArray *liveGames, NSError *err))completionBlock;
 
+- (void)fetchAllCluesWithCompletionBlock:(void (^)(NSArray *clues, NSError *err))completionBlock;
+
 @end
