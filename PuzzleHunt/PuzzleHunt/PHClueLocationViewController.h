@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "PHCreateClueViewController.h"
 
 @class MKMapView;
 @interface PHClueLocationViewController : UIViewController <UITextFieldDelegate, MKMapViewDelegate>
@@ -15,4 +16,6 @@
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) NSNumber *latitude;
 @property (nonatomic, strong) NSNumber *longitude;
+
+@property (nonatomic, weak) id <LocationFinderDelegate> delegate;
 @end

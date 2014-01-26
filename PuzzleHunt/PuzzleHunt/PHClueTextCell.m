@@ -1,14 +1,14 @@
 //
-//  PHClueNameCell.m
+//  PHClueTextCell.m
 //  PuzzleHunt
 //
 //  Created by Nick Troccoli on 1/26/14.
 //  Copyright (c) 2014 Trancos. All rights reserved.
 //
 
-#import "PHClueNameCell.h"
+#import "PHClueTextCell.h"
 
-@implementation PHClueNameCell
+@implementation PHClueTextCell
 
 
 @end

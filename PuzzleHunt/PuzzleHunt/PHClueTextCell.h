@@ -1,5 +1,5 @@
 //
-//  PHClueNameCell.h
+//  PHClueTextCell.h
 //  PuzzleHunt
 //
 //  Created by Nick Troccoli on 1/26/14.
@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PHClueNameCell : UITableViewCell
+@interface PHClueTextCell : UITableViewCell
 @property (nonatomic, weak) IBOutlet UITextField *textField;
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @end

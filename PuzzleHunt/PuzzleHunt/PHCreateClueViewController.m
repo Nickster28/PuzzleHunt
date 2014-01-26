@@ -7,6 +7,10 @@
 //
 
 #import "PHCreateClueViewController.h"
+#import "PHClueTextCell.h"
+#import "PHClueLocationViewController.h"
+#import "PHClue.h"
+
 
 @interface PHCreateClueViewController ()
 @end
@@ -37,17 +41,72 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    if ([indexPath row] == 0) {
+        PHClueTextCell *cell = [tableView dequeueReusableCellWithIdentifier:@"textCell" forIndexPath:indexPath];
+        
+        [[cell titleLabel] setText:@"Name: "];
+        [[cell textField] setText:[self.clue clueName]];
+        return cell;
     
-    // Configure the cell...
+    } else if ([indexPath row] == 1) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"detailCell" forIndexPath:indexPath];
+        
+        [[cell textLabel] setText:@"Clue Text"];
+        return cell;
     
-    return cell;
+    } else if ([indexPath row] == 2) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"detailCell" forIndexPath:indexPath];
+        
+        [[cell textLabel] setText:@"Location"];
+        return cell;
+    } else if ([indexPath row] == 3) {
+        PHClueTextCell *cell = [tableView dequeueReusableCellWithIdentifier:@"textCell" forIndexPath:indexPath];
+        
+        [[cell titleLabel] setText:@"Time (min): "];
+        [[cell textField] setText:[NSString stringWithFormat:@"%i", self.clue.time]];
+        return cell;
+        
+    } else if ([indexPath row] == 4) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"detailCell" forIndexPath:indexPath];
+        
+        [[cell textLabel] setText:@"Hints"];
+        return cell;
+    }
+    
+    return nil;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([indexPath row] == 1) {
+        
+    } else if ([indexPath row] == 2) {
+        [self performSegueWithIdentifier:@"setLocation" sender:self];
+    } else if ([indexPath row] == 4) {
+        
+    }
+}
+
+
+- (void)userChoseLocationWithLat:(NSNumber *)latitude longitude:(NSNumber *)longitude
+{
+    [self.clue setLatitude:latitude];
+    [self.clue setLongitude:longitude];
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"setLocation"]) {
+        PHClueLocationViewController *locationVC = [segue destinationViewController];
+        
+        [locationVC setDelegate:self];
+    }
 }
 
 @end

@@ -60,6 +60,15 @@
 }
 
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self.delegate userChoseLocationWithLat:self.latitude
+                                  longitude:self.longitude];
+}
+
+
 
 
 @end

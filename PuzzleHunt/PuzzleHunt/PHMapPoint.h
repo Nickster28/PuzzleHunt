@@ -12,7 +12,7 @@
 
 @interface PHMapPoint : NSObject <MKAnnotation>
 
-@property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
+@property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (nonatomic, copy) NSString *title;
 
 - (id)initWithLatitude:(NSNumber *)latitude Longitude:(NSNumber *)longitude Team:(NSString *)team;

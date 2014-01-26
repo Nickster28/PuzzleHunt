@@ -14,7 +14,7 @@
 		0110F7A81894B628008E1182 /* PHCreateClueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0110F7A71894B628008E1182 /* PHCreateClueViewController.m */; };
 		0110F7AC1895033F008E1182 /* PHClueLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0110F7AA1895033F008E1182 /* PHClueLocationViewController.m */; };
 		0110F7AF1895040C008E1182 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0110F7AE1895040C008E1182 /* MapKit.framework */; };
-		0110F7B218951822008E1182 /* PHClueNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0110F7B118951822008E1182 /* PHClueNameCell.m */; };
+		0110F7B218951822008E1182 /* PHClueTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0110F7B118951822008E1182 /* PHClueTextCell.m */; };
 		015AE41518944E3D00016E04 /* PHGameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AE41418944E3D00016E04 /* PHGameCell.m */; };
 		015AE418189454A100016E04 /* PHGameStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AE417189454A100016E04 /* PHGameStore.m */; };
 		015AE41B18945CB400016E04 /* PHBeginGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AE41A18945CB400016E04 /* PHBeginGameViewController.m */; };
@@ -76,8 +76,8 @@
 		0110F7A91895033F008E1182 /* PHClueLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHClueLocationViewController.h; sourceTree = "<group>"; };
 		0110F7AA1895033F008E1182 /* PHClueLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHClueLocationViewController.m; sourceTree = "<group>"; };
 		0110F7AE1895040C008E1182 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		0110F7B018951822008E1182 /* PHClueNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHClueNameCell.h; sourceTree = "<group>"; };
-		0110F7B118951822008E1182 /* PHClueNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHClueNameCell.m; sourceTree = "<group>"; };
+		0110F7B018951822008E1182 /* PHClueTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHClueTextCell.h; sourceTree = "<group>"; };
+		0110F7B118951822008E1182 /* PHClueTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHClueTextCell.m; sourceTree = "<group>"; };
 		015AE41318944E3D00016E04 /* PHGameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHGameCell.h; sourceTree = "<group>"; };
 		015AE41418944E3D00016E04 /* PHGameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHGameCell.m; sourceTree = "<group>"; };
 		015AE416189454A100016E04 /* PHGameStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHGameStore.h; path = PuzzleHunt/PHGameStore.h; sourceTree = "<group>"; };
@@ -194,8 +194,8 @@
 				015AE41418944E3D00016E04 /* PHGameCell.m */,
 				0110F79C18949AE7008E1182 /* PHClueCell.h */,
 				0110F79D18949AE7008E1182 /* PHClueCell.m */,
-				0110F7B018951822008E1182 /* PHClueNameCell.h */,
-				0110F7B118951822008E1182 /* PHClueNameCell.m */,
+				0110F7B018951822008E1182 /* PHClueTextCell.h */,
+				0110F7B118951822008E1182 /* PHClueTextCell.m */,
 			);
 			name = Moderator;
 			sourceTree = "<group>";
@@ -412,7 +412,7 @@
 				0110F7AC1895033F008E1182 /* PHClueLocationViewController.m in Sources */,
 				015AE41B18945CB400016E04 /* PHBeginGameViewController.m in Sources */,
 				016F4A771893CAAB005D0B3E /* PHClue.m in Sources */,
-				0110F7B218951822008E1182 /* PHClueNameCell.m in Sources */,
+				0110F7B218951822008E1182 /* PHClueTextCell.m in Sources */,
 				016F4A371893A8C3005D0B3E /* PHAppDelegate.m in Sources */,
 				0110F7A118949EA5008E1182 /* PHJoinGameListController.m in Sources */,
 				7B10547A1894380800D86E52 /* PHMapPoint.m in Sources */,
