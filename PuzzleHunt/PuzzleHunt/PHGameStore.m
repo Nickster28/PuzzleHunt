@@ -83,6 +83,7 @@
 
 - (void)addTeamWithName:(NSString *)name toGame:(PFObject *)game
 {
+    // Make a new PFObject for the team
     PFObject *team = [PFObject objectWithClassName:@"Team"];
     team[@"currentClueNum"] = [[NSNumber alloc] initWithInteger:1];
     team[@"currClueHintsUsed"] = [[NSNumber alloc] initWithInteger:0];
@@ -91,9 +92,11 @@
     team[@"rank"] = [[NSNumber alloc] initWithInteger:1];
     team[@"teamName"] = name;
     
+    // Update the game object to have this team associated with it
+    NSArray *teams = game[@"teams"];
+    game[@"teams"] = [teams arrayByAddingObject:team];
     
-    
-    [team saveInBackground];
+    [game saveInBackground];
 }
 
 @end
