@@ -515,6 +515,7 @@
                     <navigationItem key="navigationItem" title="Edit Clue" id="4ZE-2a-dZc"/>
                     <connections>
                         <segue destination="2fe-uV-hEj" kind="push" identifier="setLocation" id="ZIa-CO-591"/>
+                        <segue destination="F2a-Hp-CYI" kind="push" identifier="setText" id="f5V-qr-8EH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dl8-d4-nLL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -561,6 +562,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lj4-oq-o2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3321" y="366"/>
+        </scene>
+        <!--Clue Text View Controller - Enter Clue-->
+        <scene sceneID="Ydd-4I-Uwu">
+            <objects>
+                <viewController id="F2a-Hp-CYI" customClass="PHClueTextViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uf9-yD-LzW"/>
+                        <viewControllerLayoutGuide type="bottom" id="za9-ed-1EL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="93P-xK-paX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F7v-jT-hUP">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="314"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.38823529410000002" green="0.85490196080000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Enter Clue" id="sBh-5h-4kY"/>
+                    <connections>
+                        <outlet property="textView" destination="F7v-jT-hUP" id="714-t9-SUO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LgQ-gV-OfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3321" y="1044"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Cgv-e8-Xkq">

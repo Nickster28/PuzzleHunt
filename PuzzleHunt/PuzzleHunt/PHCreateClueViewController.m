@@ -10,6 +10,7 @@
 #import "PHClueTextCell.h"
 #import "PHClueLocationViewController.h"
 #import "PHClue.h"
+#import "PHClueTextViewController.h"
 
 
 @interface PHCreateClueViewController ()
@@ -84,7 +85,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([indexPath row] == 1) {
-        
+        [self performSegueWithIdentifier:@"setText" sender:self];
     } else if ([indexPath row] == 2) {
         [self performSegueWithIdentifier:@"setLocation" sender:self];
     } else if ([indexPath row] == 4) {
@@ -100,12 +101,23 @@
 }
 
 
+- (void)userEnteredClueWithText:(NSString *)text
+{
+    [self.clue setClueDescription:text];
+}
+
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"setLocation"]) {
         PHClueLocationViewController *locationVC = [segue destinationViewController];
         
         [locationVC setDelegate:self];
+    } else if ([[segue identifier] isEqualToString:@"setText"]) {
+        PHClueTextViewController *textVC = [segue destinationViewController];
+        
+        [textVC setDelegate:self];
+        [textVC setText:[self.clue clueDescription]];
     }
 }
 
