@@ -169,6 +169,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self setGameSelected:[[[self gameSections] valueForKey:[self getKeyForSection:[indexPath section]]] objectAtIndex:[indexPath row]]];
+    NSString *selectedGameName = [self gameSelected][@"gameName"];
+    
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation addUniqueObject:selectedGameName forKey:@"channels"];
+    [currentInstallation saveInBackground];
     
     UIAlertView *teamNameAlert = [[UIAlertView alloc] initWithTitle:@"Please Enter a Team Name:"
                                                             message:nil
