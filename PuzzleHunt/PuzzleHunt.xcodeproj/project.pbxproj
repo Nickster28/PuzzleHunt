@@ -12,6 +12,8 @@
 		0110F7A118949EA5008E1182 /* PHJoinGameListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0110F7A018949EA5008E1182 /* PHJoinGameListController.m */; };
 		0110F7A51894B60E008E1182 /* PHClueLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0110F7A41894B60E008E1182 /* PHClueLibraryViewController.m */; };
 		0110F7A81894B628008E1182 /* PHCreateClueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0110F7A71894B628008E1182 /* PHCreateClueViewController.m */; };
+		0110F7AC1895033F008E1182 /* PHClueLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0110F7AA1895033F008E1182 /* PHClueLocationViewController.m */; };
+		0110F7AD1895033F008E1182 /* PHClueLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0110F7AB1895033F008E1182 /* PHClueLocationViewController.xib */; };
 		015AE41518944E3D00016E04 /* PHGameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AE41418944E3D00016E04 /* PHGameCell.m */; };
 		015AE418189454A100016E04 /* PHGameStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AE417189454A100016E04 /* PHGameStore.m */; };
 		015AE41B18945CB400016E04 /* PHBeginGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AE41A18945CB400016E04 /* PHBeginGameViewController.m */; };
@@ -70,6 +72,9 @@
 		0110F7A41894B60E008E1182 /* PHClueLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHClueLibraryViewController.m; sourceTree = "<group>"; };
 		0110F7A61894B628008E1182 /* PHCreateClueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHCreateClueViewController.h; sourceTree = "<group>"; };
 		0110F7A71894B628008E1182 /* PHCreateClueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHCreateClueViewController.m; sourceTree = "<group>"; };
+		0110F7A91895033F008E1182 /* PHClueLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHClueLocationViewController.h; sourceTree = "<group>"; };
+		0110F7AA1895033F008E1182 /* PHClueLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHClueLocationViewController.m; sourceTree = "<group>"; };
+		0110F7AB1895033F008E1182 /* PHClueLocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHClueLocationViewController.xib; sourceTree = "<group>"; };
 		015AE41318944E3D00016E04 /* PHGameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHGameCell.h; sourceTree = "<group>"; };
 		015AE41418944E3D00016E04 /* PHGameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHGameCell.m; sourceTree = "<group>"; };
 		015AE416189454A100016E04 /* PHGameStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHGameStore.h; path = PuzzleHunt/PHGameStore.h; sourceTree = "<group>"; };
@@ -179,6 +184,9 @@
 				0110F7A41894B60E008E1182 /* PHClueLibraryViewController.m */,
 				0110F7A61894B628008E1182 /* PHCreateClueViewController.h */,
 				0110F7A71894B628008E1182 /* PHCreateClueViewController.m */,
+				0110F7A91895033F008E1182 /* PHClueLocationViewController.h */,
+				0110F7AA1895033F008E1182 /* PHClueLocationViewController.m */,
+				0110F7AB1895033F008E1182 /* PHClueLocationViewController.xib */,
 				015AE41318944E3D00016E04 /* PHGameCell.h */,
 				015AE41418944E3D00016E04 /* PHGameCell.m */,
 				0110F79C18949AE7008E1182 /* PHClueCell.h */,
@@ -374,6 +382,7 @@
 			files = (
 				016F4A801893E802005D0B3E /* DIN Condensed Bold.ttf in Resources */,
 				016F4A3F1893A8C3005D0B3E /* Images.xcassets in Resources */,
+				0110F7AD1895033F008E1182 /* PHClueLocationViewController.xib in Resources */,
 				016F4A311893A8C3005D0B3E /* InfoPlist.strings in Resources */,
 				016F4A7B1893E4F9005D0B3E /* PHLoginViewController.xib in Resources */,
 				016F4A3A1893A8C3005D0B3E /* Main.storyboard in Resources */,
@@ -395,6 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0110F7AC1895033F008E1182 /* PHClueLocationViewController.m in Sources */,
 				015AE41B18945CB400016E04 /* PHBeginGameViewController.m in Sources */,
 				016F4A771893CAAB005D0B3E /* PHClue.m in Sources */,
 				016F4A371893A8C3005D0B3E /* PHAppDelegate.m in Sources */,
