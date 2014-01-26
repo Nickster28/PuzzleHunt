@@ -147,7 +147,7 @@
                                                            delegate:self
                                                   cancelButtonTitle:@"Cancel"
                                              destructiveButtonTitle:nil
-                                                  otherButtonTitles:@"Create New", @"Browse Library", nil];
+                                                  otherButtonTitles:@"Create New Clue", @"Browse Clue Library", nil];
         
         [sheet showInView:self.view];
     }
@@ -156,12 +156,17 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 0) {
+    // The cancel button
+    if (buttonIndex == 2) {
         [self.tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
                                       animated:YES];
+        
+    // The "Create new clue" button
     } else if (buttonIndex == 1) {
         
-    } else if (buttonIndex == 2) {
+    
+    // The "library" button
+    } else if (buttonIndex == 0) {
         
     }
 }
