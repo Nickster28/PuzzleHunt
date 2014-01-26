@@ -17,6 +17,8 @@
 		0110F7B218951822008E1182 /* PHClueTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0110F7B118951822008E1182 /* PHClueTextCell.m */; };
 		0110F7B818953512008E1182 /* PHClueTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0110F7B718953512008E1182 /* PHClueTextViewController.m */; };
 		0110F7BB1895387B008E1182 /* PHClueHintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0110F7BA1895387B008E1182 /* PHClueHintViewController.m */; };
+		0110F7BE1895771B008E1182 /* PHModeratorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0110F7BD1895771B008E1182 /* PHModeratorViewController.m */; };
+		0110F7C1189578E4008E1182 /* PHRankTeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0110F7C0189578E4008E1182 /* PHRankTeamCell.m */; };
 		015AE41518944E3D00016E04 /* PHGameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AE41418944E3D00016E04 /* PHGameCell.m */; };
 		015AE418189454A100016E04 /* PHGameStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AE417189454A100016E04 /* PHGameStore.m */; };
 		015AE41B18945CB400016E04 /* PHBeginGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AE41A18945CB400016E04 /* PHBeginGameViewController.m */; };
@@ -84,6 +86,10 @@
 		0110F7B718953512008E1182 /* PHClueTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHClueTextViewController.m; sourceTree = "<group>"; };
 		0110F7B91895387B008E1182 /* PHClueHintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHClueHintViewController.h; sourceTree = "<group>"; };
 		0110F7BA1895387B008E1182 /* PHClueHintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHClueHintViewController.m; sourceTree = "<group>"; };
+		0110F7BC1895771B008E1182 /* PHModeratorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHModeratorViewController.h; sourceTree = "<group>"; };
+		0110F7BD1895771B008E1182 /* PHModeratorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHModeratorViewController.m; sourceTree = "<group>"; };
+		0110F7BF189578E4008E1182 /* PHRankTeamCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHRankTeamCell.h; sourceTree = "<group>"; };
+		0110F7C0189578E4008E1182 /* PHRankTeamCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHRankTeamCell.m; sourceTree = "<group>"; };
 		015AE41318944E3D00016E04 /* PHGameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHGameCell.h; sourceTree = "<group>"; };
 		015AE41418944E3D00016E04 /* PHGameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHGameCell.m; sourceTree = "<group>"; };
 		015AE416189454A100016E04 /* PHGameStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHGameStore.h; path = PuzzleHunt/PHGameStore.h; sourceTree = "<group>"; };
@@ -175,6 +181,8 @@
 			children = (
 				0110F79F18949EA5008E1182 /* PHJoinGameListController.h */,
 				0110F7A018949EA5008E1182 /* PHJoinGameListController.m */,
+				0110F7BF189578E4008E1182 /* PHRankTeamCell.h */,
+				0110F7C0189578E4008E1182 /* PHRankTeamCell.m */,
 			);
 			name = Player;
 			sourceTree = "<group>";
@@ -265,6 +273,8 @@
 				015AE41C1894615800016E04 /* Moderator */,
 				0110F7A218949EA8008E1182 /* Player */,
 				016F4A381893A8C3005D0B3E /* Main.storyboard */,
+				0110F7BC1895771B008E1182 /* PHModeratorViewController.h */,
+				0110F7BD1895771B008E1182 /* PHModeratorViewController.m */,
 				016F4A3E1893A8C3005D0B3E /* Images.xcassets */,
 				016F4A2D1893A8C3005D0B3E /* Supporting Files */,
 			);
@@ -423,6 +433,7 @@
 				0110F7BB1895387B008E1182 /* PHClueHintViewController.m in Sources */,
 				015AE41B18945CB400016E04 /* PHBeginGameViewController.m in Sources */,
 				016F4A771893CAAB005D0B3E /* PHClue.m in Sources */,
+				0110F7BE1895771B008E1182 /* PHModeratorViewController.m in Sources */,
 				0110F7B218951822008E1182 /* PHClueTextCell.m in Sources */,
 				016F4A371893A8C3005D0B3E /* PHAppDelegate.m in Sources */,
 				0110F7A118949EA5008E1182 /* PHJoinGameListController.m in Sources */,
@@ -433,6 +444,7 @@
 				019996EB1894479900D98051 /* PHCreatedGamesViewController.m in Sources */,
 				015AE41F1894616D00016E04 /* PHCreateGameInfoViewController.m in Sources */,
 				015AE418189454A100016E04 /* PHGameStore.m in Sources */,
+				0110F7C1189578E4008E1182 /* PHRankTeamCell.m in Sources */,
 				0110F79E18949AE7008E1182 /* PHClueCell.m in Sources */,
 				0110F79B18949799008E1182 /* PHCreateGameCluesViewController.m in Sources */,
 				0110F7A51894B60E008E1182 /* PHClueLibraryViewController.m in Sources */,

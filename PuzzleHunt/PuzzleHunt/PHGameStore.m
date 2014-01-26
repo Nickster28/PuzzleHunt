@@ -154,7 +154,7 @@
 - (void)fetchTeamsByRankWithCompletionBlock:(void (^)(NSArray *teams, NSError *err))completionBlock
 {
     PFQuery *query = [PFQuery queryWithClassName:@"Team"];
-    [query whereKey:@"game" equalTo:[self currGame]];
+    //[query whereKey:@"game" equalTo:[self currGame]];
     [query orderByAscending:@"rank"];
     [query findObjectsInBackgroundWithBlock:completionBlock];
 }

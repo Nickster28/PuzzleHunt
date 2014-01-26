@@ -11,7 +11,4 @@
 @class PHGame;
 @interface PHBeginGameViewController : UIViewController
 @property (nonatomic, strong) PHGame *game;
-
-- (IBAction)beginGame:(id)sender;
-
 @end
