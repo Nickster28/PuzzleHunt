@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "PHMapPoint.h"
+#import "PHGameStore.h"
 
 @interface PHClueLocationViewController ()
 
@@ -37,6 +38,7 @@
     
     MKLocalSearchRequest *searchRequest = [[MKLocalSearchRequest alloc] init];
     [searchRequest setNaturalLanguageQuery: placeName];
+    [searchRequest setRegion:MKCoordinateRegionMakeWithDistance([[[PHGameStore sharedStore] currLocation] coordinate], 100000, 100000)];
     MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:searchRequest];
     
     [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
@@ -49,7 +51,7 @@
             PHMapPoint *point = [[PHMapPoint alloc] initWithLatitude:[self latitude] Longitude:[self longitude] Team:@""];
             [[self mapView] addAnnotation:point];
             
-            MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc.placemark.coordinate,100,100);
+            MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc.placemark.coordinate,1000,1000);
             [[self mapView] setRegion:region animated:YES];
         }
     }];
