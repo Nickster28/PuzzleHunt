@@ -81,8 +81,7 @@
 - (void)saveGame:(UIBarButtonItem *)sender
 {
     [self.game setGameClues:[self cluesArray]];
-    [[self presentingViewController] dismissViewControllerAnimated:YES
-                                                        completion:nil];
+    [self.delegate userCreatedGame:self.game];
 }
 
 

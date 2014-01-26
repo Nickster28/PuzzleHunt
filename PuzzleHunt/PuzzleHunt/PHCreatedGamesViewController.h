@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PHGame.h"
 
-@interface PHCreatedGamesViewController : UITableViewController
+@protocol GamesCollectorDelegate <NSObject>
+
+- (void)userCreatedGame:(PHGame *)game;
+
+@end
+
+
+@interface PHCreatedGamesViewController : UITableViewController <GamesCollectorDelegate>
 
 @end

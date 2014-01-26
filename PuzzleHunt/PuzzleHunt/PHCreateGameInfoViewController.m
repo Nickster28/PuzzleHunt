@@ -82,7 +82,7 @@
                                               Clues:[NSMutableArray array]];
         
         PHCreateGameCluesViewController *cluesVC = [segue destinationViewController];
-        
+        [cluesVC setDelegate:self.delegate];
         [cluesVC setGame:game];
     }
 }

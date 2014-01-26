@@ -11,6 +11,7 @@
 #import "PHGameCell.h"
 #import "PHClue.h"
 #import "PHGameStore.h"
+#import "PHCreateGameInfoViewController.h"
 
 @interface PHCreatedGamesViewController ()
 @property (nonatomic, strong) NSMutableArray *createdGames;
@@ -85,7 +86,16 @@
 }
 
 
-/*
+- (void)userCreatedGame:(PHGame *)game
+{
+    [[self createdGames] addObject:game];
+    [self.tableView reloadData];
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
+}
+
+
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
@@ -93,8 +103,13 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"createGame"]) {
+        PHCreateGameInfoViewController *vc = [[(UINavigationController *)[segue destinationViewController] viewControllers] objectAtIndex:0];
+        
+        [vc setDelegate:self];
+    }
 }
 
- */
+
 
 @end

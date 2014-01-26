@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PHCreatedGamesViewController.h"
 
 @class PHGame, PHClue;
 
@@ -18,6 +19,7 @@
 
 @interface PHCreateGameCluesViewController : UITableViewController <UIActionSheetDelegate, ClueCreatorDelegate>
 @property (nonatomic, strong) PHGame *game;
+@property (nonatomic, weak) id <GamesCollectorDelegate> delegate;
 @end
 
 

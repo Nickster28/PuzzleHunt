@@ -166,7 +166,7 @@
                     <navigationItem key="navigationItem" title="Created Games" id="Slo-ir-ig6">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="JJg-uP-7ud">
                             <connections>
-                                <segue destination="dER-Fc-VJp" kind="modal" id="weO-xG-tcn"/>
+                                <segue destination="dER-Fc-VJp" kind="modal" identifier="createGame" id="weO-xG-tcn"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
