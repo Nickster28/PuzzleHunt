@@ -69,6 +69,9 @@
     for(PFObject *game in games) {
         NSString *firstGameLetter = [[[game valueForKey:@"gameName"] substringToIndex:1] uppercaseString];
         NSMutableArray *currSectionGames = [[self gameSections] objectForKey:firstGameLetter];
+        /*if(!currSectionGames) {
+            currSectionGames = [[NSMutableArray alloc] init];
+        }*/
         [currSectionGames addObject:game];
         [[self gameSections] setValue:currSectionGames forKey:firstGameLetter];
     }
