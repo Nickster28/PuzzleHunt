@@ -7,6 +7,8 @@
 //
 
 #import "PHCreatedGamesViewController.h"
+#import "PHGame.h"
+#import "PHGameCell.h"
 
 @interface PHCreatedGamesViewController ()
 @property (nonatomic, strong) NSMutableArray *createdGames;
@@ -20,6 +22,14 @@
 {
     if (!_createdGames) {
         _createdGames = [[NSMutableArray alloc] init];
+        
+        for (int i = 0; i < 3; i++) {
+            PHGame *game = [[PHGame alloc] initWithName:[NSString stringWithFormat:@"Game %i", i + 1]
+                                            Description:@"This is a puzzle hunt that will test your wits as a puzzle-solver."
+                                                  Clues:[NSMutableArray array]];
+            
+            [_createdGames addObject:game];
+        }
     }
     
     return _createdGames;
@@ -31,6 +41,21 @@
     [super viewDidLoad];
     
     self.navigationController.navigationBarHidden = NO;
+    
+    UIColor *offWhite = [UIColor colorWithRed:246.0f/255.0f green:246.0f/255.0f blue:246.0f/255.0f alpha:1.0];
+    
+    NSMutableDictionary *navBarTextAttributes = [NSMutableDictionary dictionaryWithCapacity:1];
+    
+    [navBarTextAttributes setObject:offWhite forKey:NSForegroundColorAttributeName ];
+    
+    self.navigationController.navigationBar.titleTextAttributes = navBarTextAttributes;
+    
+    
+    self.tableView.backgroundView = nil;
+    self.tableView.backgroundColor = [UIColor colorWithRed:99.0/255.0
+                                                     green:218.0/255.0
+                                                      blue:255.0/255.0
+                                                     alpha:1.0];
 }
 
 
@@ -45,12 +70,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    PHGameCell *cell = [tableView dequeueReusableCellWithIdentifier:@"gameCell"
+                                                          forIndexPath:indexPath];
     
-    // Configure the cell...
+    // Get the game at the current index
+    PHGame *currGame = [self.createdGames objectAtIndex:[indexPath row]];
+    
+    [cell bindGame:currGame];
     
     return cell;
+
 }
 
 
