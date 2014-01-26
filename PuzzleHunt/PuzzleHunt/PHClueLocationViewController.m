@@ -51,7 +51,7 @@
             PHMapPoint *point = [[PHMapPoint alloc] initWithLatitude:[self latitude] Longitude:[self longitude] Team:@""];
             [[self mapView] addAnnotation:point];
             
-            MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc.placemark.coordinate,100,100);
+            MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc.placemark.coordinate,1000,1000);
             [[self mapView] setRegion:region animated:YES];
         }
     }];
