@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class PHClue;
 @interface PHClueCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel *clueNumberLabel;
+@property (nonatomic, weak) IBOutlet UILabel *clueTitleLabel;
+@property (nonatomic, weak) IBOutlet UILabel *clueDurationLabel;
+@property (nonatomic, weak) IBOutlet UILabel *clueDescriptionLabel;
 
+
+- (void)bindClue:(PHClue *)clue
+          forRow:(NSUInteger)row;
 @end
