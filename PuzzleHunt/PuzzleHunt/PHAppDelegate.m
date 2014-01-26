@@ -16,6 +16,20 @@ NSString * const PHCurrentClue = @"PHCurrentClue";
 NSString * const PHClueTime = @"PHClueTime";
 NSString * const PHCurrentLatitude = @"PHCurrentLatitude";
 NSString * const PHCurrentLongitude = @"PHCurrentLongitude";
+NSString * const PHIsModerator = @"PHIsModerator";
+
+
+NSString * const PuzzleHuntNotificationTypeModerator = @"PuzzleHuntNotificationTypeModerator";
+NSString * const PuzzleHuntNotificationTypeStart = @"PuzzleHuntNotificationTypeStart";
+NSString * const PuzzleHuntNotificationTypeRank = @"PuzzleHuntNotificationTypeRank";
+NSString * const PuzzleHuntNotificationTypeLocation = @"PuzzleHuntNotificationTypeLocation";
+
+NSString * const PuzzleHuntNotificationTypeKey = @"puzzleHuntNotificationType";
+
+NSString * const PuzzleHuntRankNotification = @"PuzzleHuntRankNotification";
+NSString * const PuzzleHuntLocationNotification = @"PuzzleHuntLocationNotification";
+NSString * const PuzzleHuntStartNotification = @"PuzzleHuntStartNotification";
+
 
 @implementation PHAppDelegate
 
@@ -29,7 +43,8 @@ NSString * const PHCurrentLongitude = @"PHCurrentLongitude";
                                PHCurrentClue: @1,
                                PHClueTime: @0,
                                PHCurrentLatitude: @0,
-                               PHCurrentLongitude: @0};
+                               PHCurrentLongitude: @0,
+                               PHIsModerator: @YES};
     
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
     
@@ -50,6 +65,46 @@ NSString * const PHCurrentLongitude = @"PHCurrentLongitude";
     // Override point for customization after application launch.
     return YES;
 }
+
+
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo {
+
+    NSString *noteType = [userInfo objectForKey:PuzzleHuntNotificationTypeKey];
+    
+    // Moderator message
+    if ([noteType isEqualToString:PuzzleHuntNotificationTypeModerator]) {
+        [PFPush handlePush:userInfo];
+        
+    // Location update (for moderator only)
+    } else if ([noteType isEqualToString:PuzzleHuntNotificationTypeLocation] && [[NSUserDefaults standardUserDefaults] boolForKey:PHIsModerator]) {
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:PuzzleHuntLocationNotification
+                                                            object:nil];
+
+    // Rank update
+    } else if ([noteType isEqualToString:PuzzleHuntNotificationTypeRank]) {
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:PuzzleHuntRankNotification
+                                                            object:nil];
+        
+    // Game start
+    } else if ([noteType isEqualToString:PuzzleHuntNotificationTypeStart]) {
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:PuzzleHuntStartNotification
+                                                            object:nil];
+    }
+}
+
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
