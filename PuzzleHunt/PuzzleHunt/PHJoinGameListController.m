@@ -60,18 +60,15 @@
     // buckets (arrays) by the first letter of their name
     [self setGameSections:[[NSMutableDictionary alloc] init]];
     
-    //Create an empty bucket for each letter of the alphabet
-    for(int i = 0; i < 26; i++) {
-        [[self gameSections] setValue:[[NSMutableArray alloc] init] forKey:[self getKeyForSection:i]];
-    }
     
     //Add all games to appropriate bucket
     for(PFObject *game in games) {
         NSString *firstGameLetter = [[[game valueForKey:@"gameName"] substringToIndex:1] uppercaseString];
         NSMutableArray *currSectionGames = [[self gameSections] objectForKey:firstGameLetter];
-        /*if(!currSectionGames) {
+        //If no bucket exists, create one
+        if(!currSectionGames) {
             currSectionGames = [[NSMutableArray alloc] init];
-        }*/
+        }
         [currSectionGames addObject:game];
         [[self gameSections] setValue:currSectionGames forKey:firstGameLetter];
     }
@@ -86,12 +83,19 @@
 }
 
 //Section is a number, but our dictionary keys are letters
-//Find the alphabetic key that corresponds to the section number
-//Helper method for numRowsInSection and titleForHeaderInSection
+//Find the alphabetic key that corresponds to the section number, given that not all numbers exist
+//Create ordered array of all keys and look up correct key by index
 - (NSString *)getKeyForSection:(NSInteger)section
 {
-    NSString *alphabet = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    return [NSString stringWithFormat:@"%c",[alphabet characterAtIndex:section]];
+    NSArray *orderedKeys = [[[self gameSections] allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    return [orderedKeys objectAtIndex: section];
+}
+
+//Reverse method of above; sorts all keys and searches for index of specified key
+- (NSInteger)getSectionForKey:(NSString *)key
+{
+    NSArray *orderedKeys = [[[self gameSections] allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    return [orderedKeys indexOfObject:key];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -101,18 +105,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    NSInteger currSection = section;
-    NSString *currKey = [self getKeyForSection:currSection];
-    /*while(currSection >= 0 && ![[self gameSections] objectForKey:currKey]) {
-        currKey = [self getKeyForSection:currSection];
-        currSection -= 1;
-    }
-    while(currSection <= [[[self gameSections] allKeys] count] - 1 && ![[self gameSections] objectForKey:currKey]) {
-        currKey = [self getKeyForSection:currSection];
-        currSection += 1;
-    }
-    if(![[self gameSections] objectForKey:currKey]) return @"";*/
-    return currKey;
+    return [self getKeyForSection:section];
 }
 
 //Configure values of each cell
@@ -132,13 +125,31 @@
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
     NSString *alphabet = @"A B C D E F G H I J K L M N O P Q R S T U V W X Y Z";
-    
     return [alphabet componentsSeparatedByString:@" "];
 }
 
 //Return the section index based on the index in the side scroll (should be identical)
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
-    return index;
+    
+    NSArray *alphabet = [@"A B C D E F G H I J K L M N O P Q R S T U V W X Y Z" componentsSeparatedByString:@" "];
+    
+    NSInteger currIndex = [self getSectionForKey:title];
+    NSInteger alphaIndex = index;
+    
+    //If current letter isn't contained in our dictionary, go up and then down until you find a letter that is defined
+    while(alphaIndex > 0 && currIndex == NSNotFound) {
+        alphaIndex--;
+        currIndex = [self getSectionForKey:[alphabet objectAtIndex:alphaIndex]];
+    }
+    alphaIndex = index;
+    while(alphaIndex < [[[self gameSections] allKeys] count] - 1) {
+        alphaIndex++;
+        currIndex = [self getSectionForKey:[alphabet objectAtIndex:alphaIndex]];
+    }
+    if([self getSectionForKey:[alphabet objectAtIndex:alphaIndex-1]] == NSNotFound) {
+        return 0;
+    }
+    return alphaIndex;
 }
 
 @end
