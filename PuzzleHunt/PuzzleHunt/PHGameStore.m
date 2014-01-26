@@ -50,7 +50,7 @@
     
     PFObject *pfGame = [PFObject objectWithClassName:@"Game"];
     pfGame[@"gameName"] = [game gameName];
-    pfGame[@"gameClues"] = (NSArray *)pfClueMutableArray;
+    pfGame[@"gameClues"] = pfClueMutableArray;
     pfGame[@"gameDescription"] = [game gameDescription];
     pfGame[@"totalTime"] = [[NSNumber alloc] initWithInteger:[game totalTime]];
     

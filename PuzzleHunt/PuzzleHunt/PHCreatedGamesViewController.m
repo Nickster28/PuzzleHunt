@@ -9,6 +9,8 @@
 #import "PHCreatedGamesViewController.h"
 #import "PHGame.h"
 #import "PHGameCell.h"
+#import "PHClue.h"
+#import "PHGameStore.h"
 
 @interface PHCreatedGamesViewController ()
 @property (nonatomic, strong) NSMutableArray *createdGames;
@@ -30,6 +32,17 @@
             
             [_createdGames addObject:game];
         }
+        
+        PHClue *clue = [[PHClue alloc] initWithName:@"Test Clue"
+                                        Description:@"This is a clue"
+                                           Latitude:@-40.04
+                                          Longitude:@40.04
+                                               Time:40
+                                              Hints:@[@"Hint 1", @"Hint 2", @"Hint 3"]];
+        
+        [[_createdGames objectAtIndex:0] addClue:clue];
+        
+        [[PHGameStore sharedStore] uploadGame:[_createdGames objectAtIndex:0]];
     }
     
     return _createdGames;
