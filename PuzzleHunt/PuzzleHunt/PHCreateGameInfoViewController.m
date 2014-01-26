@@ -27,4 +27,50 @@
     self.navigationController.navigationBar.titleTextAttributes = navBarTextAttributes;
 }
 
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
+{
+    // Fade out the placeholder text
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    [animation setToValue:[NSNumber numberWithFloat:0.0]];
+    [animation setFromValue:[NSNumber numberWithFloat:1.0]];
+    [animation setDuration:0.2];
+    
+    [self.descriptionPlaceholderLabel.layer setOpacity:0.0];
+    
+    [self.descriptionPlaceholderLabel.layer addAnimation:animation
+                                                  forKey:@"opacityChange"];
+    
+    return TRUE;
+}
+
+
+- (IBAction)makeClues:(id)sender
+{
+    
+}
+
+
+- (IBAction)cancel:(id)sender
+{
+    [[self presentingViewController] dismissViewControllerAnimated:YES
+                                                        completion:nil];
+}
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return TRUE;
+}
+
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+    // Make sure to scroll the text view if the user gets to the bottom
+    if (self.descriptionTextView.text.length > 0) {
+        [textView scrollRangeToVisible:NSMakeRange(self.descriptionTextView.text.length - 1, 1)];
+    }
+}
+
 @end

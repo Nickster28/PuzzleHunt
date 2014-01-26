@@ -194,17 +194,23 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Game Name" textAlignment="center" minimumFontSize="17" background="TextFieldBackground" translatesAutoresizingMaskIntoConstraints="NO" id="gL3-3c-zV2">
-                                <rect key="frame" x="7" y="94" width="306" height="47"/>
+                                <rect key="frame" x="7" y="101" width="306" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Eas-FO-8au" id="HY7-l5-n7i"/>
+                                </connections>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UrX-pM-IzD">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UrX-pM-IzD">
                                 <rect key="frame" x="9" y="158" width="302" height="284"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Eas-FO-8au" id="jXy-yC-DAS"/>
+                                </connections>
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecf-mw-8C7">
                                 <rect key="frame" x="44" y="285" width="233" height="29"/>
@@ -213,12 +219,28 @@
                                 <color key="textColor" red="0.77254901960784317" green="0.77254901960784317" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvU-fX-oKP">
+                                <rect key="frame" x="6" y="482" width="308" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="MakeCluesButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.38823529410000002" green="0.85490196080000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create New Game" id="6Cx-2n-Fg6">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="qZz-mY-uDU"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="qZz-mY-uDU">
+                            <connections>
+                                <action selector="cancel:" destination="Eas-FO-8au" id="JL9-ZX-vFd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descriptionPlaceholderLabel" destination="ecf-mw-8C7" id="fhf-bv-Cw0"/>
+                        <outlet property="descriptionTextView" destination="UrX-pM-IzD" id="d5f-IS-Mn9"/>
+                        <outlet property="nameField" destination="gL3-3c-zV2" id="iO0-AC-9ey"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8MO-bo-Pln" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -246,6 +268,7 @@
         <image name="BeginButton" width="308" height="59"/>
         <image name="CreateGameButton" width="302" height="51"/>
         <image name="JoinGameButton" width="302" height="51"/>
+        <image name="MakeCluesButton" width="308" height="57"/>
         <image name="TextFieldBackground" width="306" height="47"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
