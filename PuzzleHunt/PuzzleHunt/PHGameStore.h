@@ -15,4 +15,6 @@
 
 - (void)uploadGame:(PHGame *)game;
 
+- (void)fetchLiveGamesWithCompletionBlock:(void (^)(NSArray *liveGames, NSError *err))completionBlock;
+
 @end
