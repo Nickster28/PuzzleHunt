@@ -9,7 +9,6 @@
 #import "PHCreateClueViewController.h"
 
 @interface PHCreateClueViewController ()
-@property (nonatomic, strong) PHClue *clue;
 @end
 
 @implementation PHCreateClueViewController

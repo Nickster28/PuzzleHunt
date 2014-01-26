@@ -10,6 +10,7 @@
 #import "PHClueCell.h"
 #import "PHClueLibraryViewController.h"
 #import "PHCreateClueViewController.h"
+#import "PHClue.h"
 
 
 @interface PHCreateGameCluesViewController ()
@@ -165,12 +166,12 @@
                                       animated:YES];
         
     // The "Create new clue" button
-    } else if (buttonIndex == 1) {
+    } else if (buttonIndex == 0) {
         [self performSegueWithIdentifier:@"createClue"
                                   sender:self];
     
     // The "library" button
-    } else if (buttonIndex == 0) {
+    } else if (buttonIndex == 1) {
         [self performSegueWithIdentifier:@"browseClueLibrary"
                                   sender:self];
     }
@@ -189,10 +190,13 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"createClue"]) {
-        PHCreateClueViewController *createVC = [segue destinationViewController];
+        PHCreateClueViewController *createVC = [[(UINavigationController *)[segue destinationViewController] viewControllers] objectAtIndex:0];
+        
         [createVC setClueDelegate:self];
+        [createVC setClue:[[PHClue alloc] init]];
     } else if ([[segue identifier] isEqualToString:@"browseClueLibrary"]) {
-        PHClueLibraryViewController *libraryVC = [segue destinationViewController];
+        PHClueLibraryViewController *libraryVC = [[(UINavigationController *)[segue destinationViewController] viewControllers] objectAtIndex:0];
+        
         [libraryVC setClueDelegate:self];
     }
 }

@@ -24,25 +24,6 @@
 {
     if (!_createdGames) {
         _createdGames = [[NSMutableArray alloc] init];
-        
-        for (int i = 0; i < 3; i++) {
-            PHGame *game = [[PHGame alloc] initWithName:[NSString stringWithFormat:@"Game %i", i + 1]
-                                            Description:@"This is a puzzle hunt that will test your wits as a puzzle-solver."
-                                                  Clues:[NSMutableArray array]];
-            
-            [_createdGames addObject:game];
-        }
-        
-        PHClue *clue = [[PHClue alloc] initWithName:@"Test Clue"
-                                        Description:@"This is a clue"
-                                           Latitude:@-40.04
-                                          Longitude:@40.04
-                                               Time:40
-                                              Hints:@[@"Hint 1", @"Hint 2", @"Hint 3"]];
-        
-        [[_createdGames objectAtIndex:0] addClue:clue];
-        
-        [[PHGameStore sharedStore] uploadGame:[_createdGames objectAtIndex:0]];
     }
     
     return _createdGames;

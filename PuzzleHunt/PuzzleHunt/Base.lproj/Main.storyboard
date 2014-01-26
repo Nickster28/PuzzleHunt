@@ -302,11 +302,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="clueCell" rowHeight="100" id="PrM-R9-6fE" customClass="PHClueCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="clueCell" rowHeight="100" id="PrM-R9-6fE" customClass="PHClueCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PrM-R9-6fE" id="wrk-7E-ZWO">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Lion King" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwI-YH-e1a">
@@ -337,6 +337,7 @@
                                     <outlet property="clueDescriptionLabel" destination="Y2Y-gz-1la" id="zR8-rz-MXW"/>
                                     <outlet property="clueDurationLabel" destination="VTT-6N-l93" id="8FF-DY-bcN"/>
                                     <outlet property="clueTitleLabel" destination="ZwI-YH-e1a" id="8zy-Bp-3BH"/>
+                                    <segue destination="0L6-Ww-sWn" kind="push" identifier="editClue" id="3hh-th-yPq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -483,6 +484,7 @@
         <scene sceneID="Cgv-e8-Xkq">
             <objects>
                 <navigationController definesPresentationContext="YES" id="9gb-Ms-fU7" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="SR9-e2-Xfl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VOS-XX-j0G">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.34901960780000002" green="0.76470588240000004" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -525,4 +527,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="3hh-th-yPq"/>
+    </inferredMetricsTieBreakers>
 </document>

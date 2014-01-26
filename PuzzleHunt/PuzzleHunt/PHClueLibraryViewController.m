@@ -9,9 +9,12 @@
 #import "PHClueLibraryViewController.h"
 #import "PHGameStore.h"
 #import "PHClueCell.h"
+#import "PHClue.h"
+#import <Parse/Parse.h>
+#import "PHCreateClueViewController.h"
 
 @interface PHClueLibraryViewController ()
-@property (nonatomic, strong) NSArray *clues;
+@property (nonatomic, strong) NSMutableArray *clues;
 @end
 
 @implementation PHClueLibraryViewController
@@ -40,7 +43,26 @@
     
     
     [[PHGameStore sharedStore] fetchAllCluesWithCompletionBlock:^(NSArray *clues, NSError *err) {
-        [self setClues:clues];
+        
+        [self setClues:[NSMutableArray array]];
+        
+        // Translate each clue into a PHClue
+        for (PFObject *obj in clues) {
+            NSNumber *lat = [NSNumber numberWithDouble:[(PFGeoPoint *)[obj objectForKey:@"location"] latitude]];
+            NSNumber *lon = [NSNumber numberWithDouble:[(PFGeoPoint *)[obj objectForKey:@"location"] longitude]];
+            NSUInteger time = [(NSNumber *)[obj objectForKey:@"duration"] integerValue];
+            
+            PHClue *clue = [[PHClue alloc] initWithName:[obj objectForKey:@"clueName"]
+                                            Description:[obj objectForKey:@"clueText"]
+                                               Latitude:lat
+                                              Longitude:lon
+                                                   Time:time
+                                                  Hints:[obj objectForKey:@"hints"]];
+            
+            [self.clues addObject:clue];
+        }
+        
+        
         [self.tableView reloadData];
     }];
 }
@@ -58,11 +80,27 @@
 {
     static NSString *CellIdentifier = @"clueCell";
     PHClueCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    PHClue *clue = [self.clues objectAtIndex:[indexPath row]];
     
-    [cell bindClue:[self.clues objectAtIndex:[indexPath row]]
+    
+    [cell bindClue:clue
             forRow:[indexPath row]];
     
     return cell;
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"editClue"]) {
+        PHCreateClueViewController *createVC = [segue destinationViewController];
+        
+        PHClueCell *tappedCell = sender;
+        NSIndexPath *ip = [self.tableView indexPathForCell:tappedCell];
+        
+        [createVC setClue:[self.clues objectAtIndex:[ip row]]];
+        [createVC setClueDelegate:self.clueDelegate];
+    }
 }
 
 
