@@ -13,7 +13,6 @@
 @property (nonatomic, weak) IBOutlet UILabel *descriptionPlaceholderLabel;
 @property (nonatomic, weak) IBOutlet UITextView *descriptionTextView;
 
-- (IBAction)makeClues:(id)sender;
 - (IBAction)cancel:(id)sender;
 
 @end

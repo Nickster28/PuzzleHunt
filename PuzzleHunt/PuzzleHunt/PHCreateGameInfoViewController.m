@@ -8,6 +8,7 @@
 
 #import "PHCreateGameInfoViewController.h"
 #import "PHGame.h"
+#import "PHCreateGameCluesViewController.h"
 
 @interface PHCreateGameInfoViewController ()
 @end
@@ -48,13 +49,6 @@
 }
 
 
-- (IBAction)makeClues:(id)sender
-{
-    PHGame *game = [[PHGame alloc] initWithName:[[self nameField] text]
-                                    Description:[[self descriptionTextView] text]
-                                          Clues:[NSMutableArray array]];
-}
-
 
 - (IBAction)cancel:(id)sender
 {
@@ -76,6 +70,20 @@
     // Make sure to scroll the text view if the user gets to the bottom
     if (self.descriptionTextView.text.length > 0) {
         [textView scrollRangeToVisible:NSMakeRange(self.descriptionTextView.text.length - 1, 1)];
+    }
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"makeClues"]) {
+        PHGame *game = [[PHGame alloc] initWithName:[[self nameField] text]
+                                        Description:[[self descriptionTextView] text]
+                                              Clues:[NSMutableArray array]];
+        
+        PHCreateGameCluesViewController *cluesVC = [segue destinationViewController];
+        
+        [cluesVC setGame:game];
     }
 }
 
