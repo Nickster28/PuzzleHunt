@@ -20,6 +20,12 @@
 @implementation PHClueLibraryViewController
 
 
+- (IBAction)cancel:(id)sender
+{
+    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

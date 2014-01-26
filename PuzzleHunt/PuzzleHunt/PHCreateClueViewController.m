@@ -11,6 +11,7 @@
 #import "PHClueLocationViewController.h"
 #import "PHClue.h"
 #import "PHClueTextViewController.h"
+#import "PHClueHintViewController.h"
 
 
 @interface PHCreateClueViewController ()
@@ -89,7 +90,7 @@
     } else if ([indexPath row] == 2) {
         [self performSegueWithIdentifier:@"setLocation" sender:self];
     } else if ([indexPath row] == 4) {
-        
+        [self performSegueWithIdentifier:@"setHint" sender:self];
     }
 }
 
@@ -107,6 +108,25 @@
 }
 
 
+- (void)userEnteredHint:(NSString *)text
+{
+    [self.clue setHints:[NSArray arrayWithObject:text]];
+}
+
+
+- (IBAction)saveClue:(id)sender
+{
+    PHClueTextCell *nameCell = (PHClueTextCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    PHClueTextCell *timeCell = (PHClueTextCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]];
+    
+    NSString *title = [[nameCell textField] text];
+    NSUInteger time = [[[timeCell textField] text] integerValue];
+    [self.clue setClueName:title];
+    [self.clue setTime:time];
+    [self.clueDelegate clueCreated:self.clue];
+}
+
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"setLocation"]) {
@@ -118,6 +138,13 @@
         
         [textVC setDelegate:self];
         [textVC setText:[self.clue clueDescription]];
+    } else if ([[segue identifier] isEqualToString:@"setHint"]) {
+        PHClueHintViewController *hintVC = [segue destinationViewController];
+        
+        [hintVC setDelegate:self];
+        if (self.clue.hints.count > 0) {
+            [hintVC setText:[[self.clue hints] objectAtIndex:0]];
+        }
     }
 }
 

@@ -11,6 +11,7 @@
 #import "PHClueLibraryViewController.h"
 #import "PHCreateClueViewController.h"
 #import "PHClue.h"
+#import "PHGame.h"
 
 
 @interface PHCreateGameCluesViewController ()
@@ -28,6 +29,28 @@
     }
     
     return _cluesArray;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.navigationController setToolbarHidden:NO animated:YES];
+    
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"Save Game"
+                                                               style:UIBarButtonItemStyleBordered target:self action:@selector(saveGame:)];
+    
+    UIBarButtonItem *space1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    
+    UIBarButtonItem *space2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                            target:self action:nil];
+    [self.navigationController.toolbar setItems:@[space1, button, space2]];
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.navigationController setToolbarHidden:YES animated:YES];
 }
 
 
@@ -52,6 +75,14 @@
                                                      green:218.0/255.0
                                                       blue:255.0/255.0
                                                      alpha:1.0];
+}
+
+
+- (void)saveGame:(UIBarButtonItem *)sender
+{
+    [self.game setGameClues:[self cluesArray]];
+    [[self presentingViewController] dismissViewControllerAnimated:YES
+                                                        completion:nil];
 }
 
 
