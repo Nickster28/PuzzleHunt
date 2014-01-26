@@ -226,7 +226,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="makeClues:" destination="Eas-FO-8au" eventType="touchUpInside" id="wQY-rU-H2D"/>
+                                    <segue destination="VCu-lM-hP2" kind="push" identifier="makeClues" id="nen-h4-ore"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -249,6 +249,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8MO-bo-Pln" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1798" y="5"/>
+        </scene>
+        <!--Create Game Clues View Controller-->
+        <scene sceneID="CI9-6o-cyp">
+            <objects>
+                <tableViewController id="VCu-lM-hP2" customClass="PHCreateGameCluesViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xqT-0S-ftL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fqL-4R-r1p">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fqL-4R-r1p" id="jC8-SA-igc">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VCu-lM-hP2" id="EPB-dF-qV2"/>
+                            <outlet property="delegate" destination="VCu-lM-hP2" id="gbG-ad-Hzj"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="7AE-lw-eYy"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DFC-JT-N8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2181" y="8"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6b0-at-aiz">
