@@ -81,7 +81,7 @@
 - (NSString *)getKeyForSection:(NSInteger)section
 {
     NSString *alphabet = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    return [alphabet substringWithRange:NSMakeRange(section, 1)];
+    return [NSString stringWithFormat:@"%c",[alphabet characterAtIndex:section]];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -99,8 +99,12 @@
     static NSString *CellIdentifier = @"gameNameCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+    NSMutableArray *currGames = [[self gameSections]valueForKey:[self getKeyForSection:[indexPath section]]];
+    
+    [[cell textLabel] setText: [currGames objectAtIndex:[indexPath row]]];
+    
     // Configure the cell...
-    // [[cell textLabel] setText...]
+    // [[cell textLabel] setText...]   [indexPath row]   [indexPath section]
     
     return cell;
 }
