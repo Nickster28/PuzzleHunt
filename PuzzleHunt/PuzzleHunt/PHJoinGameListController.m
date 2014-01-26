@@ -10,6 +10,7 @@
 #import "PHJoinGameListController.h"
 #import "PHGameStore.h"
 #import "PHGame.h"
+#import "PHPlayerViewController.h"
 
 @interface PHJoinGameListController () <UIAlertViewDelegate>
 
@@ -17,6 +18,7 @@
 // values are arrays of games with names starting with that letter
 @property (nonatomic, strong) NSMutableDictionary *gameSections;
 @property (nonatomic, strong) PFObject *gameSelected;
+@property (nonatomic, strong) NSString *teamName;
 @end
 
 @implementation PHJoinGameListController
@@ -190,10 +192,24 @@
     if(buttonIndex == 1) {
         UITextField *tempTeam = [alertView textFieldAtIndex:0];
         NSString *teamName = tempTeam.text;
+        [self setTeamName:teamName];
         [[PHGameStore sharedStore] addTeamWithName:teamName toGame: [self gameSelected]];
+        
+        [self performSegueWithIdentifier:@"playGame" sender:self];
+        
     } else {
         NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
         [self.tableView deselectRowAtIndexPath:ip animated:YES];
+    }
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"playGame"]) {
+        PHPlayerViewController *playerVC = [segue destinationViewController];
+        [playerVC setCurrGame:self.gameSelected];
+        [playerVC setTeamName:self.teamName];
     }
 }
 
