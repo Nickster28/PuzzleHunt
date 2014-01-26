@@ -8,6 +8,7 @@
 
 #import "PHLoginViewController.h"
 #import "PHAppDelegate.h"
+#import <Parse/Parse.h>
 
 
 @implementation PHLoginViewController
@@ -142,6 +143,14 @@
                                               forKey:PHUserPhoneKey];
     [[NSUserDefaults standardUserDefaults] setBool:YES
                                             forKey:PHIsLoggedInKey];
+    
+    
+    // Set up Parse
+    [Parse setApplicationId:@"sh1737prUc7FOghj3pyY9ZllOq5ECbY5LHfRaW6i"
+                  clientKey:@"G78uOxeHPxVnHujzTxgfmRbD8mCu17WnZnb9tHmN"];
+    
+    // Register for push notifications
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
     
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
