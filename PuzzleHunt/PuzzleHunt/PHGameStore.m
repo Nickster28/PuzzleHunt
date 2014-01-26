@@ -19,6 +19,21 @@
 
 @implementation PHGameStore
 @synthesize locManager = _locManager;
+@synthesize currLocation = _currLocation;
+
+
+
+- (void)startUpdatingLocation
+{
+    [self.locManager startUpdatingLocation];
+
+}
+
+
+- (void)stopUpdatingLocation
+{
+    [self.locManager stopUpdatingLocation];
+}
 
 
 - (CLLocationManager *)locManager
@@ -27,7 +42,6 @@
         _locManager = [[CLLocationManager alloc] init];
         [_locManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
         [_locManager setDelegate:self];
-        [_locManager startUpdatingLocation];
     }
     
     return _locManager;
