@@ -15,6 +15,7 @@
 // keys are individual letters (upper case)
 // values are arrays of games with names starting with that letter
 @property (nonatomic, strong) NSMutableDictionary *gameSections;
+@property (nonatomic, strong) PFObject *gameSelected;
 @end
 
 @implementation PHJoinGameListController
@@ -162,6 +163,32 @@
         return 0;
     }
     return alphaIndex;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self setGameSelected:[[[self gameSections] valueForKey:[self getKeyForSection:[indexPath section]]] objectAtIndex:[indexPath row]]];
+    
+    UIAlertView *teamNameAlert = [[UIAlertView alloc] initWithTitle:@"Please enter team name"
+                                                            message:nil
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Cancel"
+                                                  otherButtonTitles:nil];
+    teamNameAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [teamNameAlert addButtonWithTitle:@"Go"];
+    [teamNameAlert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    NSString *teamName;
+    if(buttonIndex == 1) {
+        UITextField *tempTeam = [alertView textFieldAtIndex:0];
+        teamName = tempTeam.text;
+        
+    } else {
+        
+    }
 }
 
 @end
