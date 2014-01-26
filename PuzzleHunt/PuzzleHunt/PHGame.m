@@ -9,6 +9,7 @@
 #import "PHGame.h"
 
 @implementation PHGame
+@synthesize gameClues = _gameClues;
 
 - (id)initWithName:(NSString *)name Description:(NSString *)description Clues:(NSMutableArray *)clues {
     self = [super init];
@@ -26,6 +27,15 @@
         [self setTotalTime:totalMin];
     }
     return self;
+}
+
+
+- (void)setGameClues:(NSMutableArray *)gameClues
+{
+    _gameClues = gameClues;
+    for (PHClue *clue in gameClues) {
+        self.totalTime += clue.time;
+    }
 }
 
 - (id)init {
