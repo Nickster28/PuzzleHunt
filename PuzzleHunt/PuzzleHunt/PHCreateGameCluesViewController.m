@@ -141,12 +141,27 @@
     // You cannot select already-made clues
     if ([indexPath row] != 0) [tableView deselectRowAtIndexPath:indexPath
                                                        animated:NO];
+    
+    else {
+        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Cancel"
+                                             destructiveButtonTitle:nil
+                                                  otherButtonTitles:@"Create New", @"Browse Library", nil];
+        
+        [sheet showInView:self.view];
+    }
 }
 
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if ([[segue identifier] isEqualToString:@"addClue"]) {
+    if (buttonIndex == 0) {
+        [self.tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
+                                      animated:YES];
+    } else if (buttonIndex == 1) {
+        
+    } else if (buttonIndex == 2) {
         
     }
 }

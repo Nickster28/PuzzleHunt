@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @class PHGame;
-@interface PHCreateGameCluesViewController : UITableViewController
+@interface PHCreateGameCluesViewController : UITableViewController <UIActionSheetDelegate>
 @property (nonatomic, strong) PHGame *game;
 @end
