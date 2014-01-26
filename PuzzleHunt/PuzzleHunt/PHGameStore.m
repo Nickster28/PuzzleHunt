@@ -30,29 +30,31 @@
     pfClue[@"clueName"] = [clue clueName];
     pfClue[@"clueText"] = [clue clueDescription];
     pfClue[@"hints"] = [clue hints];
-    
-    NSNumber *clueTime = [[NSNumber alloc] initWithInteger:[clue time]];
-    pfClue[@"duration"] = clueTime;
-
-    PFGeoPoint *loc = [PFGeoPoint geoPointWithLatitude:[clue latitude].doubleValue
-                                             longitude:[clue longitude].doubleValue];
-    pfClue[@"location"] = loc;
+    pfClue[@"duration"] = [[NSNumber alloc] initWithInteger:[clue time]];
+    pfClue[@"location"] = [PFGeoPoint geoPointWithLatitude:[clue latitude].doubleValue
+                                                 longitude:[clue longitude].doubleValue];
     
     return pfClue;
 }
 
-- (void)uploadGame:(PHGame *)game
-{
-    
-
-    
+- (void)uploadClue:(PHClue *)clue {
+    PFObject *pfClue = [self createPFObjectFromClue:clue];
+    [pfClue saveInBackground];
 }
 
-//gameName, teams, clues
-
-/*@property (nonatomic,strong) NSString *gameName;
-@property (nonatomic,strong) NSString *gameDescription;
-@property (nonatomic,strong) NSMutableArray *gameClues;
-@property (nonatomic) NSUInteger totalTime;*/
+- (void)uploadGame:(PHGame *)game {
+    NSMutableArray *pfClueMutableArray = [[NSMutableArray alloc]init];
+    for (PHClue *clue in [game gameClues]) {
+        [pfClueMutableArray addObject:[self createPFObjectFromClue:clue]];
+    }
+    
+    PFObject *pfGame = [PFObject objectWithClassName:@"Game"];
+    pfGame[@"gameName"] = [game gameName];
+    pfGame[@"gameClues"] = (NSArray *)pfClueMutableArray;
+    pfGame[@"gameDescription"] = [game gameDescription];
+    pfGame[@"totalTime"] = [[NSNumber alloc] initWithInteger:[game totalTime]];
+    
+    [pfGame saveInBackground];
+}
 
 @end
