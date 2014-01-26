@@ -11,7 +11,7 @@
 @class PHGame, PFObject, CLLocation;
 @interface PHGameStore : NSObject
 @property (nonatomic, strong) CLLocation *currLocation;
-
+@property (nonatomic, strong) PFObject *currGame;
 
 - (void)startUpdatingLocation;
 
@@ -25,6 +25,7 @@
 
 - (void)fetchAllCluesWithCompletionBlock:(void (^)(NSArray *clues, NSError *err))completionBlock;
 
+- (void)fetchTeamsByRankWithCompletionBlock:(void (^)(NSArray *, NSError *))completionBlock;
 
 - (void)addTeamWithName:(NSString *)name toGame:(PFObject *)game;
 
