@@ -7,6 +7,8 @@
 //
 
 #import "PHClueLocationViewController.h"
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface PHClueLocationViewController ()
 
@@ -14,14 +16,7 @@
 
 @implementation PHClueLocationViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
 
 - (void)viewDidLoad
 {
@@ -29,10 +24,17 @@
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [textField resignFirstResponder];
+    
+    // Get the text from the text view...
+    NSString *search = [textField text];
+    
+    
+    return YES;
 }
+
 
 @end

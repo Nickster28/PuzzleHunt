@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PHClueLocationViewController : UIViewController
-
+@class MKMapView;
+@interface PHClueLocationViewController : UIViewController <UITextFieldDelegate>
+@property (nonatomic, weak) IBOutlet UITextField *locationField;
+@property (nonatomic, weak) IBOutlet MKMapView *mapView;
 @end

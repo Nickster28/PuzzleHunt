@@ -14,6 +14,7 @@
 		0110F7A81894B628008E1182 /* PHCreateClueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0110F7A71894B628008E1182 /* PHCreateClueViewController.m */; };
 		0110F7AC1895033F008E1182 /* PHClueLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0110F7AA1895033F008E1182 /* PHClueLocationViewController.m */; };
 		0110F7AD1895033F008E1182 /* PHClueLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0110F7AB1895033F008E1182 /* PHClueLocationViewController.xib */; };
+		0110F7AF1895040C008E1182 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0110F7AE1895040C008E1182 /* MapKit.framework */; };
 		015AE41518944E3D00016E04 /* PHGameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AE41418944E3D00016E04 /* PHGameCell.m */; };
 		015AE418189454A100016E04 /* PHGameStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AE417189454A100016E04 /* PHGameStore.m */; };
 		015AE41B18945CB400016E04 /* PHBeginGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AE41A18945CB400016E04 /* PHBeginGameViewController.m */; };
@@ -75,6 +76,7 @@
 		0110F7A91895033F008E1182 /* PHClueLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHClueLocationViewController.h; sourceTree = "<group>"; };
 		0110F7AA1895033F008E1182 /* PHClueLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHClueLocationViewController.m; sourceTree = "<group>"; };
 		0110F7AB1895033F008E1182 /* PHClueLocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHClueLocationViewController.xib; sourceTree = "<group>"; };
+		0110F7AE1895040C008E1182 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		015AE41318944E3D00016E04 /* PHGameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHGameCell.h; sourceTree = "<group>"; };
 		015AE41418944E3D00016E04 /* PHGameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHGameCell.m; sourceTree = "<group>"; };
 		015AE416189454A100016E04 /* PHGameStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHGameStore.h; path = PuzzleHunt/PHGameStore.h; sourceTree = "<group>"; };
@@ -131,6 +133,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				016F4A681893C3A5005D0B3E /* CoreLocation.framework in Frameworks */,
+				0110F7AF1895040C008E1182 /* MapKit.framework in Frameworks */,
 				016F4A741893C3C4005D0B3E /* SystemConfiguration.framework in Frameworks */,
 				016F4A721893C3BE005D0B3E /* StoreKit.framework in Frameworks */,
 				016F4A701893C3B9005D0B3E /* Security.framework in Frameworks */,
@@ -138,7 +142,6 @@
 				016F4A6C1893C3AF005D0B3E /* MobileCoreServices.framework in Frameworks */,
 				016F4A6A1893C3AB005D0B3E /* libz.dylib in Frameworks */,
 				7B10547C1894592B00D86E52 /* Parse.framework in Frameworks */,
-				016F4A681893C3A5005D0B3E /* CoreLocation.framework in Frameworks */,
 				016F4A291893A8C3005D0B3E /* CoreGraphics.framework in Frameworks */,
 				016F4A661893C398005D0B3E /* CFNetwork.framework in Frameworks */,
 				016F4A641893C392005D0B3E /* AudioToolbox.framework in Frameworks */,
@@ -218,6 +221,7 @@
 		016F4A251893A8C3005D0B3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0110F7AE1895040C008E1182 /* MapKit.framework */,
 				7B10547B1894592B00D86E52 /* Parse.framework */,
 				016F4A731893C3C4005D0B3E /* SystemConfiguration.framework */,
 				016F4A711893C3BE005D0B3E /* StoreKit.framework */,
