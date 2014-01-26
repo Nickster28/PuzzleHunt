@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class PHGame;
+@class PHGame, PFObject;
 @interface PHGameStore : NSObject
 
 + (PHGameStore *)sharedStore;
@@ -18,5 +18,8 @@
 - (void)fetchLiveGamesWithCompletionBlock:(void (^)(NSArray *liveGames, NSError *err))completionBlock;
 
 - (void)fetchAllCluesWithCompletionBlock:(void (^)(NSArray *clues, NSError *err))completionBlock;
+
+
+- (void)addTeamWithName:(NSString *)name toGame:(PFObject *)game;
 
 @end

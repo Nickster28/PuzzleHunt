@@ -53,11 +53,12 @@
 }
 
 - (void)fetchLiveGamesWithCompletionBlock:(void (^)(NSArray *liveGames, NSError *err))completionBlock {
-    /*PFQuery *query = [PFQuery queryWithClassName:@"Game"];
+    PFQuery *query = [PFQuery queryWithClassName:@"Game"];
     [query orderByAscending:@"gameName"];
-    [query findObjectsInBackgroundWithBlock:completionBlock];*/
+    [query includeKey:@"teams"];
+    [query findObjectsInBackgroundWithBlock:completionBlock];
     
-    NSMutableArray *array = [[NSMutableArray alloc] init];
+    /*NSMutableArray *array = [[NSMutableArray alloc] init];
     NSArray *names = @[@"Nick", @"Kristen", @"Bharad", @"Avi"];
     
     for (int i = 0; i < 4; i++) {
@@ -68,7 +69,7 @@
         [array addObject:game];
     }
     
-    completionBlock(array, nil);
+    completionBlock(array, nil);*/
 }
 
 
@@ -77,6 +78,22 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Clue"];
     [query orderByAscending:@"duration"];
     [query findObjectsInBackgroundWithBlock:completionBlock];
+}
+
+
+- (void)addTeamWithName:(NSString *)name toGame:(PFObject *)game
+{
+    PFObject *team = [PFObject objectWithClassName:@"Team"];
+    team[@"currentClueNum"] = [[NSNumber alloc] initWithInteger:1];
+    team[@"currClueHintsUsed"] = [[NSNumber alloc] initWithInteger:0];
+    team[@"score"] = [[NSNumber alloc] initWithInteger:0];
+    team[@"game"] = game;
+    team[@"rank"] = [[NSNumber alloc] initWithInteger:1];
+    team[@"teamName"] = name;
+    
+    
+    
+    [team saveInBackground];
 }
 
 @end
