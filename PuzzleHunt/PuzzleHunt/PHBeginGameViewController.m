@@ -8,6 +8,7 @@
 
 #import "PHBeginGameViewController.h"
 #import "PHGame.h"
+#import "PHModeratorViewController.h"
 
 @interface PHBeginGameViewController ()
 
@@ -33,10 +34,13 @@
 }
 
 
-
-- (IBAction)beginGame:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
+    if ([[segue identifier] isEqualToString:@"moderate"]) {
+        PHModeratorViewController *mod = [segue destinationViewController];
+        
+        [mod setCurrGame:self.game];
+    }
 }
 
 @end

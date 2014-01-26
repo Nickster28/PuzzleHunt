@@ -10,11 +10,13 @@
 #import "PHGame.h"
 #import <Parse/Parse.h>
 #import <CoreLocation/CoreLocation.h>
+#import "PHAppDelegate.h"
 
 #define DEBUG 0
 
 @interface PHGameStore() <CLLocationManagerDelegate>
 @property (nonatomic, strong) CLLocationManager *locManager;
+@property (nonatomic, strong) NSString *teamID;
 @end
 
 @implementation PHGameStore
@@ -51,6 +53,23 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     [self setCurrLocation:[locations lastObject]];
+    
+    if (self.teamID) {
+        PFObject *team = [PFObject objectWithoutDataWithClassName:@"Team" objectId:self.teamID];
+        [team refreshInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+            PFGeoPoint *pt = [PFGeoPoint geoPointWithLocation:self.currLocation];
+            team[@"currLocation"] = pt;
+            [team saveInBackground];
+            
+            PFPush *push = [[PFPush alloc] init];
+            NSString *gameName = self.currGame[@"gameName"];
+            [push setChannel:gameName];
+            [push setData:@{PuzzleHuntNotificationTypeKey: PuzzleHuntNotificationTypeLocation}];
+            [push sendPushInBackground];
+        }];
+        
+        
+    }
 }
 
 
@@ -142,8 +161,14 @@
     team[@"rank"] = [[NSNumber alloc] initWithInteger:1];
     team[@"teamName"] = name;
     
+    PFGeoPoint *pt = [PFGeoPoint geoPointWithLocation:[self currLocation]];
+                      
+                      
+    team[@"currLocation"] = pt;
+    
     [team saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         
+        [self setTeamID:[team objectId]];
         // Update the game object to have this team associated with it
         [game addObject:name forKey:@"teams"];
         
@@ -154,7 +179,7 @@
 - (void)fetchTeamsByRankWithCompletionBlock:(void (^)(NSArray *teams, NSError *err))completionBlock
 {
     PFQuery *query = [PFQuery queryWithClassName:@"Team"];
-    [query whereKey:@"game" equalTo:[self currGame]];
+    //[query whereKey:@"game" equalTo:[self currGame]];
     [query orderByAscending:@"rank"];
     [query findObjectsInBackgroundWithBlock:completionBlock];
 }
