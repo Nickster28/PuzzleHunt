@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0110F79B18949799008E1182 /* PHCreateGameCluesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0110F79A18949799008E1182 /* PHCreateGameCluesViewController.m */; };
+		0110F79E18949AE7008E1182 /* PHClueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0110F79D18949AE7008E1182 /* PHClueCell.m */; };
 		015AE41518944E3D00016E04 /* PHGameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AE41418944E3D00016E04 /* PHGameCell.m */; };
 		015AE418189454A100016E04 /* PHGameStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AE417189454A100016E04 /* PHGameStore.m */; };
 		015AE41B18945CB400016E04 /* PHBeginGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AE41A18945CB400016E04 /* PHBeginGameViewController.m */; };
@@ -58,6 +59,8 @@
 /* Begin PBXFileReference section */
 		0110F79918949799008E1182 /* PHCreateGameCluesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHCreateGameCluesViewController.h; sourceTree = "<group>"; };
 		0110F79A18949799008E1182 /* PHCreateGameCluesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHCreateGameCluesViewController.m; sourceTree = "<group>"; };
+		0110F79C18949AE7008E1182 /* PHClueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHClueCell.h; sourceTree = "<group>"; };
+		0110F79D18949AE7008E1182 /* PHClueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHClueCell.m; sourceTree = "<group>"; };
 		015AE41318944E3D00016E04 /* PHGameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHGameCell.h; sourceTree = "<group>"; };
 		015AE41418944E3D00016E04 /* PHGameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHGameCell.m; sourceTree = "<group>"; };
 		015AE416189454A100016E04 /* PHGameStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHGameStore.h; path = PuzzleHunt/PHGameStore.h; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 				0110F79A18949799008E1182 /* PHCreateGameCluesViewController.m */,
 				015AE41318944E3D00016E04 /* PHGameCell.h */,
 				015AE41418944E3D00016E04 /* PHGameCell.m */,
+				0110F79C18949AE7008E1182 /* PHClueCell.h */,
+				0110F79D18949AE7008E1182 /* PHClueCell.m */,
 			);
 			name = Moderator;
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 				019996EB1894479900D98051 /* PHCreatedGamesViewController.m in Sources */,
 				015AE41F1894616D00016E04 /* PHCreateGameInfoViewController.m in Sources */,
 				015AE418189454A100016E04 /* PHGameStore.m in Sources */,
+				0110F79E18949AE7008E1182 /* PHClueCell.m in Sources */,
 				0110F79B18949799008E1182 /* PHCreateGameCluesViewController.m in Sources */,
 				7B7F01091893C069005B58C2 /* PHGame.m in Sources */,
 				016F4A331893A8C3005D0B3E /* main.m in Sources */,
