@@ -46,6 +46,7 @@
             NSLog(@"Live fetching of games didn't work");
         } else {
             [self convertArrayToDictionary:liveGames];
+            [self.tableView reloadData];
         }
     }];
 }
