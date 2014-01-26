@@ -59,17 +59,17 @@
     [self setGameSections:[[NSMutableDictionary alloc] init]];
     
     //Create an empty bucket for each letter of the alphabet
-    /*for(int i = 0; i < 26; i++) {
+    for(int i = 0; i < 26; i++) {
         [[self gameSections] setValue:[[NSMutableArray alloc] init] forKey:[self getKeyForSection:i]];
-    }*/
+    }
     
     //Add all games to appropriate bucket
     for(PFObject *game in games) {
         NSString *firstGameLetter = [[[game valueForKey:@"gameName"] substringToIndex:1] uppercaseString];
         NSMutableArray *currSectionGames = [[self gameSections] objectForKey:firstGameLetter];
-        if(!currSectionGames) {
+        /*if(!currSectionGames) {
             currSectionGames = [[NSMutableArray alloc] init];
-        }
+        }*/
         [currSectionGames addObject:game];
         [[self gameSections] setValue:currSectionGames forKey:firstGameLetter];
     }
@@ -101,7 +101,7 @@
 {
     NSInteger currSection = section;
     NSString *currKey = [self getKeyForSection:currSection];
-    while(currSection >= 0 && ![[self gameSections] objectForKey:currKey]) {
+    /*while(currSection >= 0 && ![[self gameSections] objectForKey:currKey]) {
         currKey = [self getKeyForSection:currSection];
         currSection -= 1;
     }
@@ -109,7 +109,7 @@
         currKey = [self getKeyForSection:currSection];
         currSection += 1;
     }
-    if(![[self gameSections] objectForKey:currKey]) return @"";
+    if(![[self gameSections] objectForKey:currKey]) return @"";*/
     return currKey;
 }
 
