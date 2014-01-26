@@ -177,6 +177,7 @@
     teamNameAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [teamNameAlert addButtonWithTitle:@"Go"];
     [teamNameAlert show];
+    [teamNameAlert dismissWithClickedButtonIndex:0 animated:YES];
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
@@ -185,9 +186,7 @@
     if(buttonIndex == 1) {
         UITextField *tempTeam = [alertView textFieldAtIndex:0];
         teamName = tempTeam.text;
-        
-    } else {
-        
+        [[PHGameStore sharedStore] addTeamWithName:teamName toGame: [self gameSelected]];
     }
 }
 
