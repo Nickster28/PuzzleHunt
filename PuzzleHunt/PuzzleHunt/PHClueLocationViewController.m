@@ -40,15 +40,18 @@
     MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:searchRequest];
     
     [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
-        MKMapItem *loc = [[response mapItems] objectAtIndex:0];
-        [self setLatitude:[NSNumber numberWithDouble:loc.placemark.coordinate.latitude]];
-        [self setLongitude:[NSNumber numberWithDouble:loc.placemark.coordinate.longitude]];
         
-        PHMapPoint *point = [[PHMapPoint alloc] initWithLatitude:[self latitude] Longitude:[self longitude] Team:@""];
-        [[self mapView] addAnnotation:point];
-        
-        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc.placemark.coordinate,100,100);
-        [[self mapView] setRegion:region animated:YES];
+        if (!error) {
+            MKMapItem *loc = [[response mapItems] objectAtIndex:0];
+            [self setLatitude:[NSNumber numberWithDouble:loc.placemark.coordinate.latitude]];
+            [self setLongitude:[NSNumber numberWithDouble:loc.placemark.coordinate.longitude]];
+            
+            PHMapPoint *point = [[PHMapPoint alloc] initWithLatitude:[self latitude] Longitude:[self longitude] Team:@""];
+            [[self mapView] addAnnotation:point];
+            
+            MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc.placemark.coordinate,100,100);
+            [[self mapView] setRegion:region animated:YES];
+        }
     }];
     
     return YES;

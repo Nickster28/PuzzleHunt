@@ -9,10 +9,35 @@
 #import "PHGameStore.h"
 #import "PHGame.h"
 #import <Parse/Parse.h>
+#import <CoreLocation/CoreLocation.h>
 
 #define DEBUG 0
 
+@interface PHGameStore() <CLLocationManagerDelegate>
+@property (nonatomic, strong) CLLocationManager *locManager;
+@end
+
 @implementation PHGameStore
+@synthesize locManager = _locManager;
+
+
+- (CLLocationManager *)locManager
+{
+    if (!_locManager) {
+        _locManager = [[CLLocationManager alloc] init];
+        [_locManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
+        [_locManager setDelegate:self];
+        [_locManager startUpdatingLocation];
+    }
+    
+    return _locManager;
+}
+
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    [self setCurrLocation:[locations lastObject]];
+}
 
 
 + (PHGameStore *)sharedStore

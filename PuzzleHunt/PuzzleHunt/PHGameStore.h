@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@class PHGame, PFObject;
+@class PHGame, PFObject, CLLocation;
 @interface PHGameStore : NSObject
+@property (nonatomic, strong) CLLocation *currLocation;
 
 + (PHGameStore *)sharedStore;
 
