@@ -4,7 +4,7 @@
 //
 //  Created by Nick Troccoli on 1/25/14.
 //  Copyright (c) 2014 Trancos. All rights reserved.
-//
+//  Kristen Pownell, Nick Troccoli, Bharad Raghavan, Avi Bagla
 
 #import <UIKit/UIKit.h>
 
