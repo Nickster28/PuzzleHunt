@@ -16,6 +16,17 @@ extern NSString * const PHCurrentClue;
 extern NSString * const PHClueTime;
 extern NSString * const PHCurrentLatitude;
 extern NSString * const PHCurrentLongitude;
+extern NSString * const PHIsModerator;
+
+extern NSString * const PuzzleHuntNotificationTypeModerator;
+extern NSString * const PuzzleHuntNotificationTypeStart;
+extern NSString * const PuzzleHuntNotificationTypeRank;
+extern NSString * const PuzzleHuntNotificationTypeLocation;
+extern NSString * const PuzzleHuntNotificationTypeKey;
+
+extern NSString * const PuzzleHuntRankNotification;
+extern NSString * const PuzzleHuntLocationNotification;
+extern NSString * const PuzzleHuntStartNotification;
 
 @interface PHAppDelegate : UIResponder <UIApplicationDelegate>
 
