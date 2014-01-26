@@ -26,7 +26,7 @@
     if (!_createdGames) {
         _createdGames = [[NSMutableArray alloc] init];
         
-        NSArray *fakeClueNames = [[NSArray alloc] initWithObjects:@"Clue 1",@"Clue 2",@"Clue 3",@"Clue 4",@"Clue 5",@"Clue 6",@"Clue 7",@"Clue 8",@"Clue 9",@"Clue 10", nil];
+        NSArray *fakeClueNames = [[NSArray alloc] initWithObjects:@"Here There Be Monsters",@"The Lion Returns",@"Waterworks",@"Sirens",@"Ahoy!",@"Imperialistic Ideals",@"Ancient Halls",@"A Small Tribute",@"Origin Story",@"Yellow Journalism", nil];
         NSArray *fakeClueDescriptions = [[NSArray alloc] initWithObjects:@"Check under the bed for the answer to this",@"Lucy went to Narnia through this device",@"The ocean's too large, a river's too small. This is right in-between",@"In case of emergency, please call __.",@"Avast, ye mateys! The loot be buried at this pirate-y spot.",@"The British East India Company had a roaring trade in ____. Where is this sold today?",@"Oldest university in America",@"Where did you buy this device?",@"Site of 36-hour hacktech in 2014",@"Zebras can be found at this strange historic mansion.", nil];
         NSArray *fakeLatitude = [[NSArray alloc] initWithObjects: @30.0, @40.0, @50.1, @32.3, @39.7, @45.0, @42.35, @43.7, @34.0, @38.3,nil];
         NSArray *fakeLongitude = [[NSArray alloc] initWithObjects: @20.3, @19.7, @15.4, @18.5, @13.0, @12.7, @14.9, @17.3, @18.3, @11.0,nil];
@@ -40,8 +40,8 @@
         }
         
         
-        NSArray *fakeGameNames = [[NSArray alloc] initWithObjects:@"Best game ever",@"The pirate game",@"Our game",@"The game",@"Shakespeare's Sorrow",@"Blackbeard's Burden",@"Over the River and Through the Woods",@"To Infinity And Beyond",@"The Heist",@"Mystery and Mayhem", nil];
-        NSArray *fakeGameDescriptions = [[NSArray alloc] initWithObjects:@"For Jenny's birthday!",@"Avast, ye mateys! Ready your ships to find the loot!",@"Built for a rainy day. Built to last.",@"The one. The only. The original game!",@"Why did the bard never smile? Find out with these brand-new clues!",@"The mystery of the world's most famous pirate!",@"To grandmother's house we go...",@"Blast-off in three...two...one...GO!",@"Palantir's Yearly Puzzle Hunt",@"A whodunit with a modern twist.",nil];
+        NSArray *fakeGameNames = [[NSArray alloc] initWithObjects:@"Best Game Ever",@"The Pirate Game",@"Our Game",@"The Game",@"Shakespeare's Sorrow",@"Blackbeard's Burden",@"Over the River and Through the Woods",@"To Infinity And Beyond",@"The Heist",@"Mystery and Mayhem", nil];
+        NSArray *fakeGameDescriptions = [[NSArray alloc] initWithObjects:@"We searched all night for the best game ever!",@"Avast, ye mateys! Ready your ships to find the loot!",@"For Jenny's Birthday!",@"The one. The only. The original game!",@"Why did the bard never smile? Find out with these brand-new clues!",@"The mystery of the world's most famous pirate!",@"To grandmother's house we go...",@"Blast-off in three...two...one...GO!",@"Palantir's Yearly Puzzle Hunt",@"A whodunit with a modern twist.",nil];
         NSArray *fakeGameClueIndices = [[NSArray alloc] initWithObjects:[[NSArray alloc] initWithObjects:@0,@1,@2,nil],[[NSArray alloc] initWithObjects:@2,@3,@4,nil],[[NSArray alloc] initWithObjects:@5,@2,@1,nil],[[NSArray alloc] initWithObjects:@4,@3,@0,nil],[[NSArray alloc] initWithObjects:@8,@7,@9,nil],[[NSArray alloc] initWithObjects:@2,@9,@1,nil],[[NSArray alloc] initWithObjects:@0,@4,@7,nil],[[NSArray alloc] initWithObjects:@7,@1,@2,nil],[[NSArray alloc] initWithObjects:@8,@0,@2,nil],[[NSArray alloc] initWithObjects:@5,@6,@3,nil], nil];
         
         for(int j = 0; j < 10; j++) {
