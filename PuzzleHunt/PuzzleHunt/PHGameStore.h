@@ -12,6 +12,11 @@
 @interface PHGameStore : NSObject
 @property (nonatomic, strong) CLLocation *currLocation;
 
+
+- (void)startUpdatingLocation;
+
+- (void)stopUpdatingLocation;
+
 + (PHGameStore *)sharedStore;
 
 - (void)uploadGame:(PHGame *)game;
