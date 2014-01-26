@@ -61,6 +61,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedStore = [[PHGameStore alloc] init];
+        [sharedStore startUpdatingLocation];
     });
     
     return sharedStore;
