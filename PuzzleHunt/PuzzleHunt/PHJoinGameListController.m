@@ -91,7 +91,7 @@
     return [orderedKeys objectAtIndex: section];
 }
 
-//Reverse method of above; sorts all keys and searches for index of specified key
+//Reverse method of above; sorts all keys and searches for index of specified keys
 - (NSInteger)getSectionForKey:(NSString *)key
 {
     NSArray *orderedKeys = [[[self gameSections] allKeys] sortedArrayUsingSelector:@selector(compare:)];
