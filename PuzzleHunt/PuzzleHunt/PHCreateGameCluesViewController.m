@@ -39,7 +39,15 @@
     
     self.navigationController.navigationBar.titleTextAttributes = navBarTextAttributes;
     
+    // Add an edit button
     [self.navigationItem setRightBarButtonItem:[self editButtonItem]];
+    
+    // Set the table background to blue
+    self.tableView.backgroundView = nil;
+    self.tableView.backgroundColor = [UIColor colorWithRed:99.0/255.0
+                                                     green:218.0/255.0
+                                                      blue:255.0/255.0
+                                                     alpha:1.0];
 }
 
 
