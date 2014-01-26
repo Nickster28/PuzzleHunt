@@ -54,6 +54,7 @@
 
 - (void)fetchLiveGamesWithCompletionBlock:(void (^)(NSArray *liveGames, NSError *err))completionBlock {
     PFQuery *query = [PFQuery queryWithClassName:@"Game"];
+    [query orderByAscending:@"gameName"];
     [query findObjectsInBackgroundWithBlock:completionBlock];
 }
 
