@@ -117,7 +117,7 @@
     
     NSMutableArray *currGames = [[self gameSections]valueForKey:[self getKeyForSection:[indexPath section]]];
     
-    [[cell textLabel] setText: [currGames objectAtIndex:[indexPath row]]];
+    [[cell textLabel] setText: [[currGames objectAtIndex:[indexPath row]] valueForKey:@"gameName"]];
     
     return cell;
 }
