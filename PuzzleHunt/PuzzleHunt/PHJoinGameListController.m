@@ -10,7 +10,7 @@
 #import "PHJoinGameListController.h"
 #import "PHGameStore.h"
 
-@interface PHJoinGameListController ()
+@interface PHJoinGameListController () <UIAlertViewDelegate>
 
 // keys are individual letters (upper case)
 // values are arrays of games with names starting with that letter
@@ -169,7 +169,7 @@
 {
     [self setGameSelected:[[[self gameSections] valueForKey:[self getKeyForSection:[indexPath section]]] objectAtIndex:[indexPath row]]];
     
-    UIAlertView *teamNameAlert = [[UIAlertView alloc] initWithTitle:@"Please enter team name"
+    UIAlertView *teamNameAlert = [[UIAlertView alloc] initWithTitle:@"Please Enter a Team Name:"
                                                             message:nil
                                                            delegate:self
                                                   cancelButtonTitle:@"Cancel"
@@ -177,16 +177,17 @@
     teamNameAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [teamNameAlert addButtonWithTitle:@"Go"];
     [teamNameAlert show];
-    [teamNameAlert dismissWithClickedButtonIndex:0 animated:YES];
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    NSString *teamName;
     if(buttonIndex == 1) {
         UITextField *tempTeam = [alertView textFieldAtIndex:0];
-        teamName = tempTeam.text;
+        NSString *teamName = tempTeam.text;
         [[PHGameStore sharedStore] addTeamWithName:teamName toGame: [self gameSelected]];
+    } else {
+        NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
+        [self.tableView deselectRowAtIndexPath:ip animated:YES];
     }
 }
 

@@ -10,6 +10,8 @@
 #import "PHGame.h"
 #import <Parse/Parse.h>
 
+#define DEBUG 0
+
 @implementation PHGameStore
 
 
@@ -53,12 +55,15 @@
 }
 
 - (void)fetchLiveGamesWithCompletionBlock:(void (^)(NSArray *liveGames, NSError *err))completionBlock {
+#if DEBUG == 0
     PFQuery *query = [PFQuery queryWithClassName:@"Game"];
     [query orderByAscending:@"gameName"];
     [query includeKey:@"teams"];
     [query findObjectsInBackgroundWithBlock:completionBlock];
-    
-    /*NSMutableArray *array = [[NSMutableArray alloc] init];
+#endif
+
+#if DEBUG == 1
+    NSMutableArray *array = [[NSMutableArray alloc] init];
     NSArray *names = @[@"Nick", @"Kristen", @"Bharad", @"Avi"];
     
     for (int i = 0; i < 4; i++) {
@@ -69,7 +74,8 @@
         [array addObject:game];
     }
     
-    completionBlock(array, nil);*/
+    completionBlock(array, nil);
+#endif
 }
 
 
@@ -92,11 +98,20 @@
     team[@"rank"] = [[NSNumber alloc] initWithInteger:1];
     team[@"teamName"] = name;
     
-    // Update the game object to have this team associated with it
-    NSArray *teams = game[@"teams"];
-    game[@"teams"] = [teams arrayByAddingObject:team];
-    
-    [game saveInBackground];
+    [team saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        
+        // Update the game object to have this team associated with it
+        NSArray *teams = game[@"teams"];
+        if (!teams) {
+            game[@"teams"] = @[team];
+        } else {
+            NSArray *teams = game[@"teams"];
+            NSArray *newTeams = [teams arrayByAddingObject:team];
+            game[@"teams"] = newTeams;
+        }
+        
+        [game saveInBackground];
+    }];
 }
 
 @end
