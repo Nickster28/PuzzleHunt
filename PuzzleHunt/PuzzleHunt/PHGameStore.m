@@ -80,6 +80,7 @@
 }
 
 - (void)uploadGame:(PHGame *)game {
+    
     NSMutableArray *pfClueMutableArray = [[NSMutableArray alloc]init];
     for (PHClue *clue in [game gameClues]) {
         [pfClueMutableArray addObject:[self createPFObjectFromClue:clue]];
@@ -91,7 +92,7 @@
     pfGame[@"gameDescription"] = [game gameDescription];
     pfGame[@"totalTime"] = [[NSNumber alloc] initWithInteger:[game totalTime]];
     pfGame[@"teams"] = @[];
-    
+    [self setCurrGame:pfGame];
     [pfGame saveInBackground];
 }
 
@@ -120,7 +121,7 @@
 }
 
 
-- (void)fetchAllCluesWithCompletionBlock:(void (^)(NSArray *, NSError *))completionBlock
+- (void)fetchAllCluesWithCompletionBlock:(void (^)(NSArray *clues, NSError *err))completionBlock
 {
     PFQuery *query = [PFQuery queryWithClassName:@"Clue"];
     [query orderByAscending:@"duration"];
@@ -130,6 +131,8 @@
 
 - (void)addTeamWithName:(NSString *)name toGame:(PFObject *)game
 {
+    [self setCurrGame:game];
+    
     // Make a new PFObject for the team
     PFObject *team = [PFObject objectWithClassName:@"Team"];
     team[@"currentClueNum"] = [[NSNumber alloc] initWithInteger:1];
@@ -146,6 +149,14 @@
         
         [game saveInBackground];
     }];
+}
+
+- (void)fetchTeamsByRankWithCompletionBlock:(void (^)(NSArray *teams, NSError *err))completionBlock
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Team"];
+    [query whereKey:@"game" equalTo:[self currGame]];
+    [query orderByAscending:@"rank"];
+    [query findObjectsInBackgroundWithBlock:completionBlock];
 }
 
 @end
