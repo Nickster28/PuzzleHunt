@@ -50,6 +50,7 @@
     pfGame[@"clues"] = pfClueMutableArray;
     pfGame[@"gameDescription"] = [game gameDescription];
     pfGame[@"totalTime"] = [[NSNumber alloc] initWithInteger:[game totalTime]];
+    pfGame[@"teams"] = @[];
     
     [pfGame saveInBackground];
 }
@@ -58,7 +59,7 @@
 #if DEBUG == 0
     PFQuery *query = [PFQuery queryWithClassName:@"Game"];
     [query orderByAscending:@"gameName"];
-    [query includeKey:@"teams"];
+    //[query includeKey:@"teams"];
     [query findObjectsInBackgroundWithBlock:completionBlock];
 #endif
 
@@ -101,14 +102,7 @@
     [team saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         
         // Update the game object to have this team associated with it
-        NSArray *teams = game[@"teams"];
-        if (!teams) {
-            game[@"teams"] = @[team];
-        } else {
-            NSArray *teams = game[@"teams"];
-            NSArray *newTeams = [teams arrayByAddingObject:team];
-            game[@"teams"] = newTeams;
-        }
+        [game addObject:name forKey:@"teams"];
         
         [game saveInBackground];
     }];

@@ -9,6 +9,7 @@
 #import <Parse/Parse.h>
 #import "PHJoinGameListController.h"
 #import "PHGameStore.h"
+#import "PHGame.h"
 
 @interface PHJoinGameListController () <UIAlertViewDelegate>
 
