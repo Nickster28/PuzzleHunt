@@ -170,6 +170,7 @@
                 <navigationController definesPresentationContext="YES" id="dER-Fc-VJp" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j5k-jQ-hdk">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="0.76000000000000001" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.34901960780000002" green="0.76470588240000004" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
@@ -180,10 +181,10 @@
             </objects>
             <point key="canvasLocation" x="1381" y="5"/>
         </scene>
-        <!--View Controller - Create New Game-->
+        <!--Create Game Info View Controller - Create New Game-->
         <scene sceneID="glo-DM-C6S">
             <objects>
-                <viewController id="Eas-FO-8au" sceneMemberID="viewController">
+                <viewController id="Eas-FO-8au" customClass="PHCreateGameInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aC0-8u-h88"/>
                         <viewControllerLayoutGuide type="bottom" id="s45-Mx-3bp"/>
@@ -191,9 +192,33 @@
                     <view key="view" contentMode="scaleToFill" id="NiC-u3-Ufi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Game Name" textAlignment="center" minimumFontSize="17" background="TextFieldBackground" translatesAutoresizingMaskIntoConstraints="NO" id="gL3-3c-zV2">
+                                <rect key="frame" x="7" y="94" width="306" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UrX-pM-IzD">
+                                <rect key="frame" x="9" y="158" width="302" height="284"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecf-mw-8C7">
+                                <rect key="frame" x="44" y="285" width="233" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.77254901960784317" green="0.77254901960784317" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.38823529410000002" green="0.85490196080000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Create New Game" id="6Cx-2n-Fg6"/>
+                    <navigationItem key="navigationItem" title="Create New Game" id="6Cx-2n-Fg6">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="qZz-mY-uDU"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8MO-bo-Pln" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -221,6 +246,7 @@
         <image name="BeginButton" width="308" height="59"/>
         <image name="CreateGameButton" width="302" height="51"/>
         <image name="JoinGameButton" width="302" height="51"/>
+        <image name="TextFieldBackground" width="306" height="47"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
