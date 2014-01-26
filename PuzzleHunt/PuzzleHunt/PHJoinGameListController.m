@@ -41,6 +41,18 @@
                                                       blue:255.0/255.0
                                                      alpha:1.0];
     
+    // Set the index bar colors
+ 
+    self.tableView.sectionIndexBackgroundColor = [UIColor colorWithRed:99.0/255.0
+                                                       green:218.0/255.0
+                                                        blue:255.0/255.0
+                                                       alpha:1.0];
+    self.tableView.sectionIndexColor = [UIColor colorWithRed:246.0/255.0
+                                                       green:246.0/255.0
+                                                        blue:246.0/255.0
+                                                       alpha:1.0];
+
+    
     
     // Fetch the current live games
     [[PHGameStore sharedStore] fetchLiveGamesWithCompletionBlock:^(NSArray *liveGames, NSError *err) {
