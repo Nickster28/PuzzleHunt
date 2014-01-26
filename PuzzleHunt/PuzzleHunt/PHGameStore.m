@@ -102,13 +102,18 @@
         
         // Update the game object to have this team associated with it
         NSArray *teams = game[@"teams"];
-        if (!teams) {
+        if(!teams) {
+            teams = [[NSArray alloc] init];
+        }
+        game[@"teams"] = [teams arrayByAddingObject:team];
+        
+        /*if (!teams) {
             game[@"teams"] = @[team];
         } else {
             NSArray *teams = game[@"teams"];
             NSArray *newTeams = [teams arrayByAddingObject:team];
             game[@"teams"] = newTeams;
-        }
+        }*/
         
         [game saveInBackground];
     }];
