@@ -96,10 +96,32 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ecl-EX-W7J"/>
+                    <connections>
+                        <segue destination="wha-GB-fUi" kind="push" id="hMI-b4-cRm"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZiD-Oz-Msr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="882" y="725"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ZaX-gv-vwS">
+            <objects>
+                <viewController id="wha-GB-fUi" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3St-Nf-Xoi"/>
+                        <viewControllerLayoutGuide type="bottom" id="pCI-vW-Yl1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d3H-Bf-Hw0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.38823529410000002" green="0.85490196080000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nW3-ln-wLb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LFK-De-gMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1361" y="725"/>
         </scene>
         <!--Created Games View Controller - Created Games-->
         <scene sceneID="TNG-tA-xfm">
