@@ -25,7 +25,7 @@
 
 - (void)fetchAllCluesWithCompletionBlock:(void (^)(NSArray *clues, NSError *err))completionBlock;
 
-- (void)fetchTeamsByRankWithCompletionBlock:(void (^)(NSArray *, NSError *))completionBlock;
+- (void)fetchTeamsByRankWithCompletionBlock:(void (^)(NSArray *teams, NSError *err))completionBlock;
 
 - (void)addTeamWithName:(NSString *)name toGame:(PFObject *)game;
 

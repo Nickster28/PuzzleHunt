@@ -121,7 +121,7 @@
 }
 
 
-- (void)fetchAllCluesWithCompletionBlock:(void (^)(NSArray *, NSError *))completionBlock
+- (void)fetchAllCluesWithCompletionBlock:(void (^)(NSArray *clues, NSError *err))completionBlock
 {
     PFQuery *query = [PFQuery queryWithClassName:@"Clue"];
     [query orderByAscending:@"duration"];
@@ -151,7 +151,7 @@
     }];
 }
 
-- (void)fetchTeamsByRankWithCompletionBlock:(void (^)(NSArray *, NSError *))completionBlock
+- (void)fetchTeamsByRankWithCompletionBlock:(void (^)(NSArray *teams, NSError *err))completionBlock
 {
     PFQuery *query = [PFQuery queryWithClassName:@"Team"];
     [query whereKey:@"game" equalTo:[self currGame]];
