@@ -8,6 +8,7 @@
 
 #import "PHClueLibraryViewController.h"
 #import "PHGameStore.h"
+#import "PHClueCell.h"
 
 @interface PHClueLibraryViewController ()
 @property (nonatomic, strong) NSArray *clues;
@@ -55,10 +56,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"clueCell";
+    PHClueCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    [cell bindClue:[self.clues objectAtIndex:[indexPath row]]
+            forRow:[indexPath row]];
     
     return cell;
 }

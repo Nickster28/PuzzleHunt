@@ -302,7 +302,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="PrM-R9-6fE" customClass="PHClueCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="clueCell" rowHeight="100" id="PrM-R9-6fE" customClass="PHClueCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PrM-R9-6fE" id="wrk-7E-ZWO">
@@ -333,6 +333,11 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.38823529410000002" green="0.85490196080000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="clueDescriptionLabel" destination="Y2Y-gz-1la" id="zR8-rz-MXW"/>
+                                    <outlet property="clueDurationLabel" destination="VTT-6N-l93" id="8FF-DY-bcN"/>
+                                    <outlet property="clueTitleLabel" destination="ZwI-YH-e1a" id="8zy-Bp-3BH"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>

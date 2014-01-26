@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "PHCreateGameCluesViewController.h"
 
+@class PHClue;
 @interface PHCreateClueViewController : UITableViewController
 @property (nonatomic, weak) id <ClueCreatorDelegate> clueDelegate;
+@property (nonatomic, strong) PHClue *clue;
 @end
