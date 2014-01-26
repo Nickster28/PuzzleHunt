@@ -26,7 +26,7 @@
     if (!_createdGames) {
         _createdGames = [[NSMutableArray alloc] init];
         
-        NSArray *fakeClueNames = [[NSArray alloc] initWithObjects:@"Clue 1",@"Clue 2",@"Clue 3",@"Clue 4",@"Clue 5",@"Clue 6",@"Clue 7",@"Clue 8",@"Clue 9",@"Clue 10", nil];
+        NSArray *fakeClueNames = [[NSArray alloc] initWithObjects:@"Here There Be Monsters",@"The Lion Returns",@"Waterworks",@"Sirens",@"Ahoy!",@"Imperialistic Ideals",@"Ancient Halls",@"A Small Tribute",@"Origin Story",@"Yellow Journalism", nil];
         NSArray *fakeClueDescriptions = [[NSArray alloc] initWithObjects:@"Check under the bed for the answer to this",@"Lucy went to Narnia through this device",@"The ocean's too large, a river's too small. This is right in-between",@"In case of emergency, please call __.",@"Avast, ye mateys! The loot be buried at this pirate-y spot.",@"The British East India Company had a roaring trade in ____. Where is this sold today?",@"Oldest university in America",@"Where did you buy this device?",@"Site of 36-hour hacktech in 2014",@"Zebras can be found at this strange historic mansion.", nil];
         NSArray *fakeLatitude = [[NSArray alloc] initWithObjects: @30.0, @40.0, @50.1, @32.3, @39.7, @45.0, @42.35, @43.7, @34.0, @38.3,nil];
         NSArray *fakeLongitude = [[NSArray alloc] initWithObjects: @20.3, @19.7, @15.4, @18.5, @13.0, @12.7, @14.9, @17.3, @18.3, @11.0,nil];
