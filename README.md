@@ -1,4 +1,4 @@
-Nick: The Game
+PuzzleHunt
 ===========
 
-The app I created to apply for a WWDC 2014 Student Scholarship.  I was awarded a student ticket!  The application consisted of making an app in less than 2 weeks that told users about me - including me interests and work experience.  I designed "Nick: The Game," a collection of 4 minigames that each represent something important to me: my music, my teaching, my work developing an app for my former high school, and my internship during summer 2013 at SocialRadar, a social network startup in Washington, D.C.
+A scavenger hunt app our team created for HackTech, a 36-hour hackathon in LA.  The app lets you create and play puzzle hunts (location-based scavenger hunts) right on your phone.  As a moderator, you're able to create custom clues or draw from the crowd-sourced database of clues, and pin them to any location you want.  Once the game begins, you're able to monitor team rankings and scores, and see where all teams are on a map.  As a player, you're able to view your current clue, team ranking, get hints, submit a clue answer, and contact the moderator.
